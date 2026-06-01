@@ -50,14 +50,44 @@ const site = {
   ],
   publications: [
     {
-      title: 'Vocal species are more central in Eastern Himalayan Mixed-Species Bird Flocks',
-      meta: 'S. Gupta et al. • 2024 • BioRxiv preprint; revision submitted to Ornithology',
-      note: 'Highlight this as your flagship bioacoustics output.'
+      id: 'bird_flocks',
+      title: 'Vocal species are more central in Eastern Himalayan mixed-species bird flocks',
+      authors: 'Satyam Gupta, Akshay Bharadwaj, Akshiti Bhat, Aiti Thapa, Aman Biswakarma, Bharat Tamang, Binod Munda, Biren Biswakarma, Dema Tamang, Dambar Pradhan, Mangal K. Rai, Rohit Rai, Shambhu Rai, Umesh Srinivasan',
+      journal: 'Ornithology',
+      volume: '115(2)',
+      pages: 'ukag021',
+      year: '2026',
+      doi: '10.1093/ornithology/ukag021',
+      url: 'https://doi.org/10.1093/ornithology/ukag021',
+      note: 'Investigates how vocal activity during the dawn chorus acts as an acoustic beacon, influencing the social centrality and cohesion of mixed-species understory bird flocks.',
+      speciesName: 'Eastern Himalayan MSF Birds',
+      img: 'Photography/DSC_0755.JPG',
+      citations: {
+        apa: 'Gupta, S., Bharadwaj, A., Bhat, A., Thapa, A., Biswakarma, A., Tamang, B., Munda, B., Biswakarma, B., Tamang, D., Pradhan, D., Rai, M. K., Rai, R., Rai, S., & Srinivasan, U. (2026). Vocal species are more central in Eastern Himalayan mixed-species bird flocks. Ornithology, 115(2), ukag021. https://doi.org/10.1093/ornithology/ukag021',
+        mla: 'Gupta, Satyam, et al. "Vocal Species Are More Central in Eastern Himalayan Mixed-Species Bird Flocks." Ornithology, vol. 115, no. 2, 2026, ukag021, https://doi.org/10.1093/ornithology/ukag021.',
+        chicago: 'Gupta, Satyam, Akshay Bharadwaj, Akshiti Bhat, Aiti Thapa, Aman Biswakarma, Bharat Tamang, Binod Munda, Biren Biswakarma, Dema Tamang, Dambar Pradhan, Mangal K. Rai, Rohit Rai, Shambhu Rai, and Umesh Srinivasan. "Vocal Species Are More Central in Eastern Himalayan Mixed-Species Bird Flocks." Ornithology 115, no. 2 (2026): ukag021. https://doi.org/10.1093/ornithology/ukag021.',
+        bibtex: `@article{gupta2026vocal,\n  title={Vocal species are more central in Eastern Himalayan mixed-species bird flocks},\n  author={Gupta, Satyam and Bharadwaj, Akshay and Bhat, Akshiti and Thapa, Aiti and Biswakarma, Aman and Tamang, Bharat and Munda, Binod and Biswakarma, Biren and Tamang, Dema and Pradhan, Dambar and Rai, Mangal K and Rai, Rohit and Rai, Shambhu and Srinivasan, Umesh},\n  journal={Ornithology},\n  volume={115},\n  number={2},\n  pages={ukag021},\n  year={2026},\n  publisher={Oxford University Press},\n  doi={10.1093/ornithology/ukag021},\n  url={https://doi.org/10.1093/ornithology/ukag021}\n}`
+      }
     },
     {
-      title: 'From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India',
-      meta: 'P. Hatkar, S. Gupta, R. Chinnasamy • 2025 • Journal of Marine Sciences',
-      note: 'This shows your range beyond birds and demonstrates collaborative breadth.'
+      id: 'sea_snake',
+      title: 'From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India',
+      authors: 'Prachi Hatkar, Satyam Gupta, Chinnasamy Ramesh',
+      journal: 'Journal of Marine Studies',
+      volume: '2(3)',
+      pages: '21664',
+      year: '2025',
+      doi: '10.29103/joms.v2i3.21664',
+      url: 'https://doi.org/10.29103/joms.v2i3.21664',
+      note: 'A comprehensive study combining genetics, ecological niche modeling, and field surveys to identify threat zones and propose critical conservation management plans for the short-tailed sea snake along the Indian coast.',
+      speciesName: 'Short-tailed Sea Snake (Hydrophis curtus)',
+      img: 'Photography/DSC_0064.JPG',
+      citations: {
+        apa: 'Hatkar, P., Gupta, S., & Ramesh, C. (2025). From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India. Journal of Marine Studies, 2(3), 21664. https://doi.org/10.29103/joms.v2i3.21664',
+        mla: 'Hatkar, Prachi, Satyam Gupta, and Chinnasamy Ramesh. "From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India." Journal of Marine Studies, vol. 2, no. 3, 2025, 21664, https://doi.org/10.29103/joms.v2i3.21664.',
+        chicago: 'Hatkar, Prachi, Satyam Gupta, and Chinnasamy Ramesh. "From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India." Journal of Marine Studies 2, no. 3 (2025): 21664. https://doi.org/10.29103/joms.v2i3.21664.',
+        bibtex: `@article{hatkar2025genes,\n  title={From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India},\n  author={Hatkar, Prachi and Gupta, Satyam and Ramesh, Chinnasamy},\n  journal={Journal of Marine Studies},\n  volume={2},\n  number={3},\n  pages={21664},\n  year={2025},\n  doi={10.29103/joms.v2i3.21664},\n  url={https://doi.org/10.29103/joms.v2i3.21664}\n}`
+      }
     }
   ],
   sounds: [
