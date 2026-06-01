@@ -463,7 +463,6 @@
         <div class="section-title">
           <div>
             <h2>Photography</h2>
-            <p>Field documentation and wildlife observations organized by taxonomic group. Multi-image species feature an auto-sliding carousel on hover.</p>
           </div>
           <span class="badge">Nature Portfolio</span>
         </div>
@@ -682,21 +681,17 @@
           }
           
           // Lightbox click triggers
-          const imgWrap = item.querySelector('.gallery-img-wrap');
-          const info = item.querySelector('.gallery-info');
-          
           function handleOpen() {
             const activeImgIdx = parseInt(item.getAttribute('data-active-img-index'), 10);
             openLightbox(speciesIdx, activeImgIdx);
           }
           
-          imgWrap.addEventListener('click', (e) => {
-            if (e.target.classList.contains('card-carousel-nav') || e.target.classList.contains('carousel-dot')) {
+          item.addEventListener('click', (e) => {
+            if (e.target.closest('.card-carousel-nav') || e.target.closest('.carousel-dots') || e.target.closest('.carousel-dot')) {
               return;
             }
             handleOpen();
           });
-          info.addEventListener('click', handleOpen);
         });
       }
       
@@ -743,9 +738,12 @@
       });
       
       function updateZoomOrigin(e) {
-        const rect = lightboxImgContainer.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const rect = lightboxImg.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
+        let x = ((e.clientX - rect.left) / rect.width) * 100;
+        let y = ((e.clientY - rect.top) / rect.height) * 100;
+        x = Math.max(0, Math.min(100, x));
+        y = Math.max(0, Math.min(100, y));
         lightboxImg.style.transformOrigin = `${x}% ${y}%`;
       }
       

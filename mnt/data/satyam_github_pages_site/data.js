@@ -88,8 +88,6 @@ const site = {
         chicago: 'Hatkar, Prachi, Satyam Gupta, and Chinnasamy Ramesh. "From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India." Journal of Marine Studies 2, no. 3 (2025): 21664. https://doi.org/10.29103/joms.v2i3.21664.',
         bibtex: `@article{hatkar2025genes,\n  title={From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India},\n  author={Hatkar, Prachi and Gupta, Satyam and Ramesh, Chinnasamy},\n  journal={Journal of Marine Studies},\n  volume={2},\n  number={3},\n  pages={21664},\n  year={2025},\n  doi={10.29103/joms.v2i3.21664},\n  url={https://doi.org/10.29103/joms.v2i3.21664}\n}`
       }
-    }
-  ],
   sounds: [
     {
       id: 'gcw',
@@ -98,7 +96,6 @@ const site = {
       habitat: 'Eastern Himalayas',
       voice: 'chirp',
       emoji: '🐦',
-      bio: 'Real field recording of the Green-crowned Warbler calling, recorded in high canopy mixed flocks.',
       src: 'Audio Bank/GCW.wav',
       img: 'Audio Bank/GCW.jpg',
       imgCredit: 'Shishir Bhat / Wikimedia Commons',
@@ -111,7 +108,6 @@ const site = {
       habitat: 'Eastern Himalayas',
       voice: 'whistle',
       emoji: '🐦',
-      bio: 'High canopy flycatcher active vocalizations, recorded during Eastern Himalayas surveys.',
       src: 'Audio Bank/GHCF.wav',
       img: 'Audio Bank/GHCF.jpg',
       imgCredit: 'L. Shyamal / Wikimedia Commons',
@@ -124,7 +120,6 @@ const site = {
       habitat: 'Eastern Himalayas',
       voice: 'call',
       emoji: '🐦',
-      bio: 'Rapid calling patterns, recorded from mixed-species flocks in Sikkim.',
       src: 'Audio Bank/RTM.wav',
       img: 'Audio Bank/RTM.jpg',
       imgCredit: 'L. Shyamal / Wikimedia Commons',
@@ -137,7 +132,6 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      bio: 'Monsoon advertisement call of the Indian Golden-backed Frog, recorded near wet torrents.',
       src: 'Audio Bank/Hylarana_indica.wav',
       img: 'Audio Bank/Hylarana_indica.jpg',
       imgCredit: 'Shreeram MV / Wikimedia Commons',
@@ -150,7 +144,6 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      bio: 'Field recording of Rao\'s Intermediate Golden-backed Frog, endemic to the Western Ghats wet forests.',
       src: 'Audio Bank/H.intermedius_Ind_07.WAV',
       img: 'Audio Bank/H_intermedius.jpg',
       imgCredit: 'Shreeram MV / Wikimedia Commons',
@@ -163,7 +156,6 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      bio: 'Advertisement call of the Malabar Gliding Frog, recorded during night surveys in Kerala.',
       src: 'Audio Bank/R.malabaricus_Ind_08.WAV',
       img: 'Audio Bank/R_malabaricus.jpg',
       imgCredit: 'Kalyan Varma / Wikimedia Commons',
@@ -176,11 +168,12 @@ const site = {
       habitat: 'Any Ecosystem',
       voice: 'wind',
       emoji: '🌿',
-      bio: 'A composite outdoor field soundscape containing forest ambience, insects, and distant biophony.',
       src: 'Audio Bank/Soundscape.wav',
       img: 'Audio Bank/Soundscape.jpg',
       imgCredit: 'Hans-Peter Scholz / Wikimedia Commons',
       audioCredit: 'Satyam Gupta'
+    }
+  ],redit: 'Satyam Gupta'
     }
   ],
   photos: [
@@ -288,6 +281,38 @@ const site = {
         'A striking color morph displaying complex blotched patterns that mimic decaying leaves.',
         'A brilliant green variation of the species, commonly found waiting near streams.',
         'One of the rarest color variations, sporting vibrant golden-yellow scales.'
+      ],
+      emoji: '🐍'
+    },
+    {
+      id: 'sea_snake_photo',
+      title: 'Short-tailed Sea Snake',
+      scientific: 'Hydrophis curtus',
+      group: 'Reptiles',
+      srcs: [
+        'Photography/DSC_0064.JPG',
+        'Photography/DSC_0755.JPG',
+        'Photography/DSC_0420.JPG'
+      ],
+      captions: [
+        'A short-tailed sea snake (Hydrophis curtus) documented during coastal biodiversity and genetic connectivity surveys in India.',
+        'Detail of the scale pattern and head structure of Hydrophis curtus, adapted for marine life.',
+        'A marine reptile specimen observed in the field, showing the unique flat tail used for swimming.'
+      ],
+      emoji: '🐍'
+    },
+    {
+      id: 'collared_cat_snake',
+      title: 'Collared Cat Snake',
+      scientific: 'Boiga nuchalis',
+      group: 'Reptiles',
+      srcs: [
+        'Photography/Collared_Cat_Snake.png',
+        'Photography/Collared_Cat_Snake2.png'
+      ],
+      captions: [
+        'A nocturnal, tree-dwelling collared cat snake (Boiga nuchalis) photographed during nocturnal search surveys in the Western Ghats.',
+        'Close-up showing the distinct collar markings and large eyes adapted for night foraging.'
       ],
       emoji: '🐍'
     },
@@ -408,6 +433,17 @@ const site = {
         'A view of the complex, multi-layered canopy structures where bioacoustic monitoring is conducted.'
       ],
       emoji: '🌿'
+    },
+    {
+      id: 'fieldwork_satyam',
+      title: 'Field Research and Acoustic Monitoring',
+      scientific: 'Eastern Himalayas / Western Ghats',
+      group: 'Habitats & Fieldwork',
+      srcs: ['personal photos/_DSC0620.JPG'],
+      captions: [
+        'Conducting bioacoustic monitoring and documentation of species diversity in their natural environments.'
+      ],
+      emoji: '🎙️'
     }
   ],
   art: [
