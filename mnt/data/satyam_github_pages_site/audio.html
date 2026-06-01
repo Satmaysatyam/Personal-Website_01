@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Bank | Satyam Gupta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header dynamically injected by navigation.js -->
+
+    <main class="section-wrap">
+      <section id="page-audio" class="page">
+        <div class="section-title">
+          <div>
+            <h2>Audio Bank</h2>
+            <p>
+              BeastBox-inspired soundboard with habitat-based mixing. Cards can play demo voices immediately, and each one can be replaced with your own field recording by uploading an audio file.
+            </p>
+          </div>
+          <span class="badge">Interactive mixer</span>
+        </div>
+
+        <div class="audio-header">
+          <div class="subtle">Click play on multiple species to mix. Add at least five from one habitat to unlock Beast Mode.</div>
+          <button class="btn primary" id="stopAllBtn">Stop all sounds</button>
+        </div>
+
+        <div class="sound-grid" id="soundGrid"></div>
+
+        <div class="mixer" id="mixerBox">
+          <div class="mixer-grid" id="mixerGrid"></div>
+          <div class="beast-mode" id="beastMode"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer dynamically injected by navigation.js -->
+  </div>
+
+  <script src="data.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audioGrid = document.getElementById('soundGrid');
+      const mixerGrid = document.getElementById('mixerGrid');
+      const beastMode = document.getElementById('beastMode');
+      const stopAllBtn = document.getElementById('stopAllBtn');
+
+      const audioState = site.sounds.map(s => {
+        const hasSrc = !!s.src;
+        let audioEl = null;
+        if (hasSrc) {
+          audioEl = new Audio(s.src);
+          audioEl.loop = true;
+        }
+        return {
+          ...s,
+          playing: false,
+          volume: 0.72,
+          mode: hasSrc ? 'file' : 'demo',
+          audioEl: audioEl,
+          fileUrl: hasSrc ? s.src : '',
+          timers: [],
+          ac: null,
+          nodes: []
+        };
+      });
+
+      function ensureAudioContext(card) {
+        if (!card.ac) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          card.ac = new AC();
+        }
+        return card.ac;
+      }
+
+      function voiceConfig(type) {
+        switch (type) {
+          case 'chirp': return { freq: 920, dur: 1.2, pattern: [0.12, 0.08, 0.11, 0.06, 0.1], sweep: [1200, 780], color: 'high' };
+          case 'croak': return { freq: 180, dur: 1.6, pattern: [0.22, 0.12, 0.18], sweep: [220, 160], color: 'low' };
+          case 'call': return { freq: 620, dur: 1.4, pattern: [0.16, 0.12, 0.18, 0.1], sweep: [640, 860], color: 'mid' };
+          case 'whistle': return { freq: 740, dur: 1.45, pattern: [0.1, 0.15, 0.08, 0.12], sweep: [720, 1080], color: 'bright' };
+          case 'wind': return { freq: 120, dur: 1.8, pattern: [0.35], sweep: [100, 150], color: 'ambient' };
+          case 'pulse': return { freq: 90, dur: 2.0, pattern: [0.15, 0.12, 0.2, 0.1], sweep: [100, 66], color: 'deep' };
+          default: return { freq: 440, dur: 1.3, pattern: [0.12, 0.08, 0.12], sweep: [440, 440], color: 'mid' };
+        }
+      }
+
+      function playDemo(card) {
+        const ac = ensureAudioContext(card);
+        if (ac.state === 'suspended') ac.resume();
+        const cfg = voiceConfig(card.voice);
+        const now = ac.currentTime + 0.02;
+        const osc = ac.createOscillator();
+        const gain = ac.createGain();
+        const filter = ac.createBiquadFilter();
+        filter.type = cfg.color === 'low' || cfg.color === 'deep' ? 'lowpass' : 'bandpass';
+        filter.frequency.value = cfg.freq * (cfg.color === 'high' ? 1.7 : 1.2);
+        gain.gain.value = 0;
+        osc.type = cfg.color === 'ambient' ? 'sine' : cfg.color === 'high' ? 'triangle' : 'sawtooth';
+        osc.frequency.setValueAtTime(cfg.freq, now);
+        osc.frequency.exponentialRampToValueAtTime(cfg.sweep[1], now + 0.5);
+        osc.frequency.exponentialRampToValueAtTime(cfg.sweep[0], now + cfg.dur);
+        osc.connect(filter); filter.connect(gain); gain.connect(ac.destination);
+        const env = () => {
+          let t = ac.currentTime;
+          const peak = 0.14 * card.volume;
+          cfg.pattern.forEach((seg, idx) => {
+            gain.gain.cancelScheduledValues(t);
+            gain.gain.setValueAtTime(0.0001, t);
+            gain.gain.exponentialRampToValueAtTime(peak, t + seg * 0.18);
+            gain.gain.exponentialRampToValueAtTime(0.0001, t + seg);
+            t += seg;
+            if (idx < cfg.pattern.length - 1) t += 0.05;
+          });
+        };
+        osc.start(now);
+        env();
+        const timer = setInterval(env, Math.max(900, cfg.dur * 1000));
+        card.timers.push(timer);
+        card.nodes.push(osc, gain, filter);
+        setTimeout(() => {
+          if (!card.playing) return;
+          try { osc.stop(); } catch (e) {}
+          try { osc.disconnect(); gain.disconnect(); filter.disconnect(); } catch (e) {}
+        }, 2000);
+      }
+
+      function stopDemo(card) {
+        card.timers.forEach(clearInterval);
+        card.timers = [];
+        card.nodes.forEach(node => {
+          try { node.stop && node.stop(); } catch (e) {}
+          try { node.disconnect && node.disconnect(); } catch (e) {}
+        });
+        card.nodes = [];
+        if (card.audioEl) {
+          card.audioEl.pause();
+          card.audioEl.currentTime = 0;
+        }
+        card.playing = false;
+      }
+
+      function renderAudio() {
+        audioGrid.innerHTML = audioState.map(card => `
+          <div class="sound-card ${card.playing ? 'playing' : ''}" data-id="${card.id}">
+            <div class="sound-top">
+              <div class="subtle" style="color: rgba(255,255,255,.8);">${card.habitat}</div>
+              <h3>${card.emoji} ${card.name}</h3>
+              <div class="scientific-name" style="font-size: 0.85rem; font-style: italic; opacity: 0.85; margin: -2px 0 8px; font-family: Georgia, serif;">${card.scientific || ''}</div>
+              <p>${card.bio}</p>
+              <div class="wave"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="sound-body">
+              <div class="audio-controls">
+                <button class="btn primary" data-action="toggle">${card.playing ? 'Pause' : 'Play'}</button>
+                <button class="btn secondary" data-action="reset">Reset</button>
+              </div>
+              <label class="subtle">Volume</label>
+              <input class="slider" type="range" min="0" max="1" step="0.01" value="${card.volume}" data-action="volume" />
+              <label class="upload">
+                Upload real audio file
+                <input type="file" accept="audio/*" style="display:none" data-action="upload" />
+              </label>
+              <div class="subtle">${card.mode === 'file' ? (card.fileUrl.startsWith('blob:') ? 'Using uploaded recording.' : 'Using real field recording.') : 'Using built-in demo sound until you upload a file.'}</div>
+            </div>
+          </div>
+        `).join('');
+        mixerGrid.innerHTML = audioState.map(card => `
+          <div class="mix-pill">
+            ${card.playing ? '🟢' : '⚪'} ${card.name}
+            <b>${card.habitat}</b>
+          </div>
+        `).join('');
+
+        const activeHabitatCount = {};
+        let topHabitat = null;
+        let topCount = 0;
+        audioState.filter(s => s.playing).forEach(s => {
+          activeHabitatCount[s.habitat] = (activeHabitatCount[s.habitat] || 0) + 1;
+          if (activeHabitatCount[s.habitat] > topCount) {
+            topCount = activeHabitatCount[s.habitat];
+            topHabitat = s.habitat;
+          }
+        });
+        if (topCount >= 5) {
+          beastMode.classList.add('show');
+          beastMode.innerHTML = `<b>Beast Mode unlocked</b><br>Five sounds from <b>${topHabitat}</b> are active. This is the habitat-mixing idea inspired by BeastBox.`;
+        } else {
+          beastMode.classList.remove('show');
+          beastMode.innerHTML = '';
+        }
+      }
+
+      audioGrid.addEventListener('click', async (e) => {
+        const cardEl = e.target.closest('.sound-card');
+        if (!cardEl) return;
+        const card = audioState.find(s => s.id === cardEl.dataset.id);
+        if (!card) return;
+        const action = e.target.closest('[data-action]')?.dataset.action;
+        if (action === 'toggle') {
+          if (card.playing) {
+            stopDemo(card);
+            renderAudio();
+            return;
+          }
+          card.playing = true;
+          if (card.mode === 'file' && card.audioEl) {
+            card.audioEl.volume = card.volume;
+            card.audioEl.loop = true;
+            card.audioEl.play();
+          } else {
+            playDemo(card);
+          }
+          renderAudio();
+        }
+        if (action === 'reset') {
+          stopDemo(card);
+          const orig = site.sounds.find(s => s.id === card.id);
+          const hasSrc = orig && orig.src;
+          card.mode = hasSrc ? 'file' : 'demo';
+          card.fileUrl = hasSrc ? orig.src : '';
+          card.audioEl = hasSrc ? new Audio(orig.src) : null;
+          if (card.audioEl) {
+            card.audioEl.loop = true;
+            card.audioEl.volume = card.volume;
+          }
+          renderAudio();
+        }
+      });
+
+      audioGrid.addEventListener('input', (e) => {
+        const cardEl = e.target.closest('.sound-card');
+        if (!cardEl) return;
+        const card = audioState.find(s => s.id === cardEl.dataset.id);
+        if (!card) return;
+        if (e.target.dataset.action === 'volume') {
+          card.volume = Number(e.target.value);
+          if (card.audioEl) card.audioEl.volume = card.volume;
+        }
+        if (e.target.dataset.action === 'upload' && e.target.files && e.target.files[0]) {
+          const file = e.target.files[0];
+          const url = URL.createObjectURL(file);
+          stopDemo(card);
+          card.mode = 'file';
+          card.fileUrl = url;
+          card.audioEl = new Audio(url);
+          card.audioEl.loop = true;
+          card.audioEl.volume = card.volume;
+          card.playing = true;
+          card.audioEl.play();
+          renderAudio();
+        }
+      });
+
+      stopAllBtn.addEventListener('click', () => {
+        audioState.forEach(stopDemo);
+        renderAudio();
+      });
+
+      renderAudio();
+    });
+  </script>
+</body>
+</html>

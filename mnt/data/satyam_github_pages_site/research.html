@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Satyam Gupta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header dynamically injected by navigation.js -->
+
+    <main class="section-wrap">
+      <section id="page-research" class="page">
+        <div class="section-title">
+          <div>
+            <h2>Research</h2>
+            <p>Use subpages or tabs for each research theme. These blocks are editable and can be expanded with figures, maps, and embedded PDFs.</p>
+          </div>
+          <span class="badge">Tabbed research modules</span>
+        </div>
+
+        <div class="tabs" id="researchTabs"></div>
+        <div id="researchPanel" class="panel"></div>
+      </section>
+    </main>
+
+    <!-- Footer dynamically injected by navigation.js -->
+  </div>
+
+  <script src="data.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const researchTabs = document.getElementById('researchTabs');
+      const researchPanel = document.getElementById('researchPanel');
+      let activeResearch = 'avian';
+
+      function renderResearch() {
+        researchTabs.innerHTML = site.researchTabs.map(tab => `
+          <button class="tab ${tab.id === activeResearch ? 'active' : ''}" data-tab="${tab.id}">${tab.emoji} ${tab.title}</button>
+        `).join('');
+        const tab = site.researchTabs.find(t => t.id === activeResearch);
+        researchPanel.innerHTML = `
+          <div class="panel-inner split">
+            <div>
+              <span class="badge">${tab.emoji} ${tab.title}</span>
+              <h3 style="margin-top:14px; font-size:1.6rem;">${tab.intro}</h3>
+              <div class="divider"></div>
+              <div class="timeline">
+                ${tab.points.map(p => `<div class="timeline-item"><div class="timeline-year">▸</div><div><b>${p}</b></div></div>`).join('')}
+              </div>
+            </div>
+            <div>
+              <div class="card pad" style="background: linear-gradient(135deg, rgba(11,93,67,0.08), rgba(217,164,65,0.12));">
+                <h3>How to present it</h3>
+                <p>${tab.footer}</p>
+                <div class="divider"></div>
+                <p class="subtle">Drop in a map, a thesis figure, or a short video loop to bring the subpage to life.</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      researchTabs.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-tab]');
+        if (!btn) return;
+        activeResearch = btn.dataset.tab;
+        renderResearch();
+      });
+
+      renderResearch();
+    });
+  </script>
+</body>
+</html>

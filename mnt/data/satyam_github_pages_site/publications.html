@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Satyam Gupta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header dynamically injected by navigation.js -->
+
+    <main class="section-wrap">
+      <section id="page-publications" class="page">
+        <div class="section-title">
+          <div>
+            <h2>Publications</h2>
+            <p>Keep citations clean, but present them like featured outputs with an option to add PDF, DOI, or preprint links later.</p>
+          </div>
+          <span class="badge">Selected outputs</span>
+        </div>
+        <div class="pub-list" id="pubList"></div>
+      </section>
+    </main>
+
+    <!-- Footer dynamically injected by navigation.js -->
+  </div>
+
+  <script src="data.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pubList = document.getElementById('pubList');
+      pubList.innerHTML = site.publications.map((p, idx) => `
+        <div class="pub">
+          <div class="pub-badge">${idx === 0 ? '1' : '2'}</div>
+          <div>
+            <h3>${p.title}</h3>
+            <small>${p.meta}</small>
+            <p style="margin-top:8px;">${p.note}</p>
+          </div>
+          <div style="display:grid; gap:8px; justify-items:end;">
+            <button class="link-btn">PDF / DOI</button>
+            <button class="link-btn">Cite</button>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

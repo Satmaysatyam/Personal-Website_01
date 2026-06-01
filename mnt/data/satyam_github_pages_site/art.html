@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art | Satyam Gupta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header dynamically injected by navigation.js -->
+
+    <main class="section-wrap">
+      <section id="page-art" class="page">
+        <div class="section-title">
+          <div>
+            <h2>Art</h2>
+            <p>Use the same visual system as the photography page, but let the page breathe more. Keep titles and medium visible, with larger artwork thumbnails.</p>
+          </div>
+          <span class="badge">Visual portfolio</span>
+        </div>
+        <div class="art-grid" id="artGrid"></div>
+      </section>
+    </main>
+
+    <!-- Footer dynamically injected by navigation.js -->
+  </div>
+
+  <script src="data.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const artGrid = document.getElementById('artGrid');
+      artGrid.innerHTML = site.art.map((a, i) => `
+        <div class="art-card">
+          <div class="art-thumb" style="background: linear-gradient(135deg, ${i===0 ? 'rgba(20,53,89,0.96), rgba(124,166,125,0.78)' : i===1 ? 'rgba(11,93,67,0.96), rgba(217,164,65,0.74)' : 'rgba(141,93,59,0.96), rgba(11,93,67,0.72)'});">
+            ${a.emoji}&nbsp;${a.title}
+          </div>
+          <div class="art-body">
+            <div><b>Medium:</b> ${a.medium}</div>
+            <div style="margin-top:8px;">${a.note}</div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
