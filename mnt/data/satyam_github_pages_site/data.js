@@ -69,7 +69,10 @@ const site = {
       voice: 'chirp',
       emoji: '🐦',
       bio: 'Real field recording of the Green-crowned Warbler calling, recorded in high canopy mixed flocks.',
-      src: 'Audio Bank/GCW.wav'
+      src: 'Audio Bank/GCW.wav',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Green-crowned_Warbler_%28Phylloscopus_burkii%29_by_Shishir_Bhat.jpg',
+      imgCredit: 'Shishir Bhat / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'ghcf',
@@ -79,7 +82,10 @@ const site = {
       voice: 'whistle',
       emoji: '🐦',
       bio: 'High canopy flycatcher active vocalizations, recorded during Eastern Himalayas surveys.',
-      src: 'Audio Bank/GHCF.wav'
+      src: 'Audio Bank/GHCF.wav',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Culicicapa_ceylonensis-2.jpg',
+      imgCredit: 'L. Shyamal / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'rtm',
@@ -89,7 +95,10 @@ const site = {
       voice: 'call',
       emoji: '🐦',
       bio: 'Rapid calling patterns, recorded from mixed-species flocks in Sikkim.',
-      src: 'Audio Bank/RTM.wav'
+      src: 'Audio Bank/RTM.wav',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Red-tailed_Minla_%28Minla_ignotincta%29_by_L_Shyamal.jpg',
+      imgCredit: 'L. Shyamal / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'hylarana',
@@ -99,7 +108,10 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       bio: 'Monsoon advertisement call of the Indian Golden-backed Frog, recorded near wet torrents.',
-      src: 'Audio Bank/Hylarana_indica.wav'
+      src: 'Audio Bank/Hylarana_indica.wav',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Indosylvirana_indica_-_Shreeram_MV_-_Agumbe.jpg',
+      imgCredit: 'Shreeram MV / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'hydrophylax',
@@ -109,7 +121,10 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       bio: 'Field recording of Rao\'s Intermediate Golden-backed Frog, endemic to the Western Ghats wet forests.',
-      src: 'Audio Bank/H.intermedius_Ind_07.WAV'
+      src: 'Audio Bank/H.intermedius_Ind_07.WAV',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Indosylvirana_intermedia.jpg',
+      imgCredit: 'Shreeram MV / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'malabaricus_frog',
@@ -119,7 +134,10 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       bio: 'Advertisement call of the Malabar Gliding Frog, recorded during night surveys in Kerala.',
-      src: 'Audio Bank/R.malabaricus_Ind_08.WAV'
+      src: 'Audio Bank/R.malabaricus_Ind_08.WAV',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Rhacophorus_malabaricus.jpg',
+      imgCredit: 'Kalyan Varma / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     },
     {
       id: 'soundscape',
@@ -129,7 +147,10 @@ const site = {
       voice: 'wind',
       emoji: '🌿',
       bio: 'A composite outdoor field soundscape containing forest ambience, insects, and distant biophony.',
-      src: 'Audio Bank/Soundscape.wav'
+      src: 'Audio Bank/Soundscape.wav',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/080110_zell_mosel.JPG/1200px-080110_zell_mosel.JPG',
+      imgCredit: 'Hans-Peter Scholz / Wikimedia Commons',
+      audioCredit: 'Satyam Gupta'
     }
   ],
   photos: [
