@@ -88,6 +88,8 @@ const site = {
         chicago: 'Hatkar, Prachi, Satyam Gupta, and Chinnasamy Ramesh. "From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India." Journal of Marine Studies 2, no. 3 (2025): 21664. https://doi.org/10.29103/joms.v2i3.21664.',
         bibtex: `@article{hatkar2025genes,\n  title={From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India},\n  author={Hatkar, Prachi and Gupta, Satyam and Ramesh, Chinnasamy},\n  journal={Journal of Marine Studies},\n  volume={2},\n  number={3},\n  pages={21664},\n  year={2025},\n  doi={10.29103/joms.v2i3.21664},\n  url={https://doi.org/10.29103/joms.v2i3.21664}\n}`
       }
+    }
+  ],
   sounds: [
     {
       id: 'gcw',
@@ -172,8 +174,6 @@ const site = {
       img: 'Audio Bank/Soundscape.jpg',
       imgCredit: 'Hans-Peter Scholz / Wikimedia Commons',
       audioCredit: 'Satyam Gupta'
-    }
-  ],redit: 'Satyam Gupta'
     }
   ],
   photos: [
