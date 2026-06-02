@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   header.innerHTML = `
     <div class="topbar-inner">
       <a href="index.html" class="brand">
-        <div class="brand-mark">🌿</div>
+        <img src="logo.png" alt="Logo" class="brand-logo">
         <div>
           <div>Satyam Gupta</div>
           <div class="subtle">Behavioral Ecologist • Bioacoustician • Conservation Researcher</div>
