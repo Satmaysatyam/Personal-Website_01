@@ -213,14 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         coords: [22.250, 80.600],
         title: "Kanha Tiger Reserve",
-        emoji: "🐯",
-        desc: "Landscape Conservation: Bioacoustic canopy recording and mammalian occupancy surveys."
+        emoji: "📷",
+        desc: "Wildlife Tourism: Researching tourist visitation footprints, visitor-wildlife interactions, and park management dynamics."
       },
       {
         coords: [22.484, 81.761],
         title: "Achanakmar Tiger Reserve",
-        emoji: "🐯",
-        desc: "Landscape Conservation: Species occupancy mapping, camera trap logistics, and prey-base counting."
+        emoji: "📋",
+        desc: "Biodiversity Documentation: Conducting community-led surveys for People's Biodiversity Register (PBR) compilation, documenting local flora, fauna, and traditional knowledge."
       },
       {
         coords: [12.115, 79.843],
@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         coords: [28.148, 77.332],
         title: "Palwal, Haryana",
-        emoji: "🐦",
-        desc: "Avian Ecology: Sarus Crane breeding biology and nesting surveys within agricultural and wetland ecosystems."
+        emoji: "📋",
+        desc: "Biodiversity Documentation: People's Biodiversity Register (PBR) documentation, surveying local agro-biodiversity, plants, and fauna."
       },
       {
         coords: [22.466, 69.066],
