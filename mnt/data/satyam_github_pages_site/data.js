@@ -291,14 +291,12 @@ const site = {
       scientific: 'Hydrophis curtus',
       group: 'Reptiles',
       srcs: [
-        'Photography/DSC_0064.JPG',
-        'Photography/DSC_0755.JPG',
-        'Photography/DSC_0420.JPG'
+        'Photography/Hydrophis_curtus_350251401.jpg',
+        'Photography/Lapemis_curtus.jpg'
       ],
       captions: [
-        'A short-tailed sea snake (Hydrophis curtus) documented during coastal biodiversity and genetic connectivity surveys in India.',
-        'Detail of the scale pattern and head structure of Hydrophis curtus, adapted for marine life.',
-        'A marine reptile specimen observed in the field, showing the unique flat tail used for swimming.'
+        'A short-tailed sea snake (Hydrophis curtus) documented during coastal biodiversity and genetic connectivity surveys in India. (Photo: Svetlana Tsarakhova / iNaturalist CC0)',
+        'Detail of the scale pattern and head structure of Hydrophis curtus, adapted for marine life. (Photo: Wikimedia Commons / CC-BY-SA 3.0)'
       ],
       emoji: '🐍'
     },
@@ -330,6 +328,39 @@ const site = {
     },
 
     // --- Birds ---
+    {
+      id: 'white_throated_kingfisher',
+      title: 'White-throated Kingfisher',
+      scientific: 'Halcyon smyrnensis',
+      group: 'Birds',
+      srcs: ['Photography/DSC_0064.JPG'],
+      captions: [
+        'A White-throated Kingfisher perched on a branch, displaying its rich chocolate-brown body, bright blue back, and vibrant red bill.'
+      ],
+      emoji: '🪶'
+    },
+    {
+      id: 'indian_paradise_flycatcher',
+      title: 'Indian Paradise Flycatcher',
+      scientific: 'Terpsiphone paradisi',
+      group: 'Birds',
+      srcs: ['Photography/DSC_0755.JPG'],
+      captions: [
+        'A stunning male Indian Paradise Flycatcher (white morph) with its signature long tail streamers, photographed in central India.'
+      ],
+      emoji: '🪶'
+    },
+    {
+      id: 'jungle_owlet',
+      title: 'Jungle Owlet',
+      scientific: 'Glaucidium radiatum',
+      group: 'Birds',
+      srcs: ['Photography/DSC_0420.JPG'],
+      captions: [
+        'A Jungle Owlet camouflaged among the lush green foliage, looking forward with its distinctive golden eyes.'
+      ],
+      emoji: '🪶'
+    },
     {
       id: 'tragopan',
       title: 'Western Tragopan',
