@@ -284,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add reveal classes dynamically to avoid cluttering HTML
   const sectionsToReveal = [
     document.querySelector('.home-split-layout'),
+    document.querySelector('.home-focus-row'),
     document.querySelector('.hero-gallery'),
     document.querySelector('.hero-panel'),
     document.querySelector('.section-title')

@@ -92,29 +92,46 @@
         <div class="home-split-layout">
           <!-- Left side: Professional profile card -->
           <div class="profile-card-wrap">
-            <div class="mini-card profile-info-card">
-              <span class="profile-label">ABOUT ME</span>
-              <h3>Satyam Gupta</h3>
-              <p>
-                Welcome! I am a behavioral ecologist from India, driven by a deep fascination with how animals navigate the complexities of collective life. My research bridges sociality, animal communication, and movement ecology to understand how groups coordinate, make decisions, and thrive in dynamic environments. Currently, I am a DAAD Fellow and PhD researcher at the DPZ Leibniz Institute for Primate Research in Göttingen, Germany. My doctoral research shifts focus to primates, where I investigate the fundamental drivers and mechanisms of collective movement in ring-tailed lemurs (<i>Lemur catta</i>). By studying how these highly social primates communicate and move as a cohesive unit, I aim to shed light on the evolutionary underpinnings of group coordination.
-              </p>
-              
-              <div class="map-section-wrap" style="margin-top: 14px; margin-bottom: 10px;">
-                <span class="profile-label" style="display: block; margin-bottom: 6px;">RESEARCH MAP</span>
-                <div id="field-map" style="height: 240px; border-radius: var(--radius2); overflow: hidden; border: 1px solid rgba(11, 93, 67, 0.12); box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; z-index: 5;"></div>
+            <div class="mini-card profile-info-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(11, 93, 67, 0.12);">
+              <div>
+                <span class="profile-label">ABOUT ME</span>
+                <h3 style="margin-top: 8px; margin-bottom: 12px; font-size: 1.6rem; font-weight: 800;">Satyam Gupta</h3>
+                <p style="line-height: 1.7; font-size: 0.98rem; color: var(--muted); margin: 0 0 16px 0;">
+                  Welcome! I am a behavioral ecologist from India, driven by a deep fascination with how animals navigate the complexities of collective life. My research bridges sociality, animal communication, and movement ecology to understand how groups coordinate, make decisions, and thrive in dynamic environments. Currently, I am a DAAD Fellow and PhD researcher at the DPZ Leibniz Institute for Primate Research in Göttingen, Germany. My doctoral research shifts focus to primates, where I investigate the fundamental drivers and mechanisms of collective movement in ring-tailed lemurs (<i>Lemur catta</i>). By studying how these highly social primates communicate and move as a cohesive unit, I aim to shed light on the evolutionary underpinnings of group coordination.
+                </p>
               </div>
-              
-              <div class="chip-row">
-                <span class="chip">🗺️ Spatial analysis</span>
-                <span class="chip">🎙️ Raven Pro</span>
-                <span class="chip">📷 Photography</span>
-                <span class="chip">🎨 Art</span>
+              <div style="border-top: 1px solid rgba(22, 49, 38, 0.08); padding-top: 16px; margin-top: auto;">
+                <span class="profile-label">RESEARCH TOOLKIT</span>
+                <div class="chip-row">
+                  <span class="chip">🗺️ Spatial analysis</span>
+                  <span class="chip">🎙️ Raven Pro</span>
+                  <span class="chip">📷 Photography</span>
+                  <span class="chip">🎨 Art</span>
+                </div>
               </div>
             </div>
           </div>
           
-          <!-- Right side: Interactive focus grid cards -->
-          <div class="focus-grid-wrap">
+          <!-- Right side: Interactive field map card -->
+          <div class="profile-card-wrap">
+            <div class="mini-card profile-info-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(11, 93, 67, 0.12);">
+              <div>
+                <span class="profile-label">INTERACTIVE FIELD MAP</span>
+                <h3 style="margin-top: 8px; margin-bottom: 12px; font-size: 1.6rem; font-weight: 800;">Research & Fieldwork Sites</h3>
+                <p style="line-height: 1.5; font-size: 0.95rem; color: var(--muted); margin: 0 0 16px 0;">
+                  Explore interactive markers showing study regions spanning bioacoustic monitoring, mammal camera-trapping, and marine conservation across India.
+                </p>
+              </div>
+              <div class="map-section-wrap" style="flex-grow: 1; min-height: 280px; position: relative;">
+                <div id="field-map" style="position: absolute; inset: 0; width: 100%; height: 100%; border-radius: var(--radius2); overflow: hidden; border: 1px solid rgba(11, 93, 67, 0.12); box-shadow: 0 4px 12px rgba(0,0,0,0.05); z-index: 5;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Focus Grid Cards (3 columns) -->
+        <div class="home-focus-row" style="margin-top: 24px;">
+          <div class="focus-grid-three">
             <div class="focus-card card pad">
               <div class="focus-icon-wrap">🔬</div>
               <div>
