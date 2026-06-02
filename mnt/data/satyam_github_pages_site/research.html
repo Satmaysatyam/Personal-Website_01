@@ -5,6 +5,174 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Satyam Gupta</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- Research Panel Visual Styling --- */
+    .research-visuals-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .research-fig-card {
+      background: white;
+      border: 1px solid rgba(22, 49, 38, 0.08);
+      border-radius: var(--radius2);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(13,33,25,0.06);
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .research-fig-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(13,33,25,0.12);
+      border-color: rgba(11, 93, 67, 0.15);
+    }
+    
+    .fig-img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #f0ebe1;
+    }
+    
+    .fig-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .research-fig-card:hover .fig-img-wrap img {
+      transform: scale(1.04);
+    }
+    
+    .fig-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(11, 93, 67, 0.82);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 5;
+    }
+    
+    .fig-caption {
+      padding: 14px 16px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+      border-top: 1px solid rgba(22, 49, 38, 0.04);
+      background: rgba(255,255,255,0.5);
+    }
+    
+    /* --- Lightbox Modal --- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(8, 18, 14, 0.97);
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .lightbox.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .lightbox-content-wrap {
+      max-width: 960px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .lightbox.visible .lightbox-content-wrap {
+      transform: translateY(0) scale(1);
+    }
+    
+    .lightbox-img-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d1a14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 72vh;
+      width: 100%;
+    }
+    
+    .lightbox-img-container img {
+      max-height: 72vh;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    
+    .lightbox-caption {
+      width: 100%;
+      margin-top: 20px;
+      color: white;
+      text-align: left;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .lightbox-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+      opacity: 0.65;
+      transition: all 0.2s ease;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      z-index: 20;
+    }
+    
+    .lightbox-close:hover {
+      opacity: 1;
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <div class="app">
@@ -15,7 +183,7 @@
         <div class="section-title">
           <div>
             <h2>Research</h2>
-            <p>Use subpages or tabs for each research theme. These blocks are editable and can be expanded with figures, maps, and embedded PDFs.</p>
+            <p>Field research modules detailing key study questions, methodologies, and visual findings in bioacoustics and ecology.</p>
           </div>
           <span class="badge">Tabbed research modules</span>
         </div>
@@ -28,40 +196,114 @@
     <!-- Footer dynamically injected by navigation.js -->
   </div>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <div class="lightbox-content-wrap">
+      <div class="lightbox-img-container" id="lightboxImgContainer">
+        <img id="lightboxImg" src="" alt="Enlarged research figure" />
+      </div>
+      <div class="lightbox-caption">
+        <div class="lightbox-title-row">
+          <div class="lightbox-title-wrap">
+            <span id="lightboxTitle" class="lightbox-title"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="data.js"></script>
   <script src="navigation.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const researchTabs = document.getElementById('researchTabs');
       const researchPanel = document.getElementById('researchPanel');
+      
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxClose = document.getElementById('lightboxClose');
+      
       let activeResearch = 'avian';
 
       function renderResearch() {
         researchTabs.innerHTML = site.researchTabs.map(tab => `
           <button class="tab ${tab.id === activeResearch ? 'active' : ''}" data-tab="${tab.id}">${tab.emoji} ${tab.title}</button>
         `).join('');
+        
         const tab = site.researchTabs.find(t => t.id === activeResearch);
+        
+        const imagesHtml = tab.images.map((img, idx) => `
+          <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
+            <div class="fig-img-wrap">
+              <img src="${img.src}" alt="${img.caption}" loading="lazy">
+              <span class="fig-badge">Figure ${idx + 1}</span>
+            </div>
+            <div class="fig-caption">${img.caption}</div>
+          </div>
+        `).join('');
+
         researchPanel.innerHTML = `
           <div class="panel-inner split">
             <div>
               <span class="badge">${tab.emoji} ${tab.title}</span>
-              <h3 style="margin-top:14px; font-size:1.6rem;">${tab.intro}</h3>
+              <h3 style="margin-top:14px; font-size:1.6rem; font-weight:800; line-height:1.25;">${tab.intro}</h3>
+              <p style="margin-top:12px; font-size:1.02rem; line-height:1.65; color:var(--muted);">${tab.desc}</p>
               <div class="divider"></div>
-              <div class="timeline">
-                ${tab.points.map(p => `<div class="timeline-item"><div class="timeline-year">▸</div><div><b>${p}</b></div></div>`).join('')}
+              <div class="timeline" style="margin-top:20px;">
+                ${tab.points.map(p => `
+                  <div class="timeline-item">
+                    <div class="timeline-year">▸</div>
+                    <div style="line-height:1.55;">${p}</div>
+                  </div>
+                `).join('')}
               </div>
             </div>
             <div>
-              <div class="card pad" style="background: linear-gradient(135deg, rgba(11,93,67,0.08), rgba(217,164,65,0.12));">
-                <h3>How to present it</h3>
-                <p>${tab.footer}</p>
-                <div class="divider"></div>
-                <p class="subtle">Drop in a map, a thesis figure, or a short video loop to bring the subpage to life.</p>
+              <div class="research-visuals-col">
+                ${imagesHtml}
               </div>
             </div>
           </div>
         `;
+
+        // Add lightbox click event listeners to new cards
+        const figCards = researchPanel.querySelectorAll('.research-fig-card');
+        figCards.forEach(card => {
+          card.addEventListener('click', () => {
+            const src = card.getAttribute('data-img-src');
+            const caption = card.getAttribute('data-img-caption');
+            openLightbox(src, caption);
+          });
+        });
       }
+
+      // Lightbox functions
+      function openLightbox(src, caption) {
+        lightboxImg.src = src;
+        lightboxTitle.textContent = caption;
+        lightbox.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('visible');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('visible')) {
+          closeLightbox();
+        }
+      });
 
       researchTabs.addEventListener('click', (e) => {
         const btn = e.target.closest('button[data-tab]');

@@ -15,37 +15,49 @@ const site = {
       id: 'avian',
       title: 'Avian Bioacoustics',
       emoji: '🐦',
-      intro: 'Showcase the Symphony of Survival project as your flagship research story.',
+      intro: 'Symphony of Survival: Bioacoustics in the Eastern Himalayas',
+      desc: 'Investigating vocal species centrality in mixed-species bird flocks (MSFs) to understand how vocalizations maintain flock cohesion during the dawn chorus.',
       points: [
-        'Mixed-species bird flocks in the Eastern Himalayas',
-        'Vocal species centrality and network analysis',
-        'Field recordings, call structure, and ecological interpretation'
+        'Modeled social network centrality based on vocal behavior of species in Mixed-Species Flocks (MSFs)',
+        'Analyzed dawn chorus vocal activity as acoustic beacons that maintain group cohesion',
+        'Elevational acoustic monitoring of bird communities in rugged Himalayan woodlands'
       ],
-      footer: 'Best for a visual mix of sound spectrograms, flock diagrams, and thesis figures.'
+      images: [
+        { src: 'Photography/bird_network_plot.png', caption: 'Vocal Centrality Network Plot representing social structure' },
+        { src: 'Photography/Field photos/bioacoustic_recording.jpg', caption: 'Conducting bioacoustic recordings in Eaglenest Wildlife Sanctuary' }
+      ]
     },
     {
       id: 'amphibian',
       title: 'Amphibian Ecology',
       emoji: '🐸',
-      intro: 'A separate section for field acoustic monitoring and breeding ecology.',
+      intro: 'Amphibian Bioacoustics & Breeding Ecology in the Western Ghats',
+      desc: 'Deploying passive acoustic monitoring (Audiomoth) to document calling intensity, microhabitat associations, and winter breeding ecology of endemic amphibians.',
       points: [
-        'Winter breeding ecology',
-        'Audiomoth deployment and calling intensity',
-        'Field photos and habitat context'
+        'Passive Acoustic Monitoring (PAM) utilizing Audiomoth recorders to track vocal active times',
+        'Field documentation of breeding phenology and microhabitat parameters',
+        'Endemic bush frog call structural analysis in the evergreen forests of Sirsi'
       ],
-      footer: 'Use a darker palette and rain/forest textures to make this section feel distinct.'
+      images: [
+        { src: 'Photography/Field photos/frog_measurement.jpg', caption: 'Taking morphometric measurements (SVL and weight) of a bush frog' },
+        { src: 'Photography/Field photos/herp_fieldwork.jpg', caption: 'Nocturnal survey and snake capture during herpetological indexing' }
+      ]
     },
     {
       id: 'landscape',
       title: 'Landscape Conservation',
       emoji: '🗺️',
-      intro: 'Use this as a map-based overview of your wider conservation work.',
+      intro: 'Landscape-Scale Connectivity and Carnivore Occupancy',
+      desc: 'Designing occupancy frameworks, camera trap grids, and line transects to study mammal migration and habitat corridors across central Indian dry forests.',
       points: [
-        'Kanha, Satpura-Pench, Melghat, Achanakmar, and Marine National Park',
-        'Occupancy surveys, camera trapping, biodiversity documentation',
-        'Connect the ecological scale across taxa and landscapes'
+        'Grid-based camera trap deployment for tiger, leopard, and prey base occupancy modeling',
+        'Corridor mapping and connectivity studies across Kanha, Satpura, and Melghat Reserves',
+        'Compiling People’s Biodiversity Registers (PBRs) in collaboration with local communities'
       ],
-      footer: 'A timeline or map works especially well here.'
+      images: [
+        { src: 'Photography/Leopard1-0435.jpg', caption: 'Indian Leopard (Panthera pardus fusca) captured in central India camera traps' },
+        { src: 'Photography/_DSC0328.png', caption: 'Evergreen Forest Canopy: assessing canopy cover and habitat complexity' }
+      ]
     }
   ],
   publications: [
