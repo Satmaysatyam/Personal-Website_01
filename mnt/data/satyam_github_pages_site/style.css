@@ -25,8 +25,15 @@ body {
     linear-gradient(180deg, var(--bg), #fbfaf6 30%, var(--bg2) 100%);
   overflow-x: hidden;
   
-  /* Fallback smooth fade-in animation on page load */
+  /* Premium fade-in and scale-in animation on page load */
+  opacity: 0;
   animation: page-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-exit {
+  opacity: 0;
+  filter: blur(8px);
 }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
@@ -220,7 +227,7 @@ button, input, textarea, select { font: inherit; }
   display:flex; align-items:center; justify-content:space-between; gap: 14px; flex-wrap:wrap;
   margin-bottom: 16px;
 }
-.sound-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+.sound-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
 .sound-card {
   background: white; border: 1px solid rgba(22,49,38,0.08); border-radius: 22px;
   overflow:hidden; box-shadow: 0 12px 34px rgba(13,33,25,0.06); display:flex; flex-direction:column;
@@ -350,30 +357,32 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 @keyframes page-fade-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    filter: blur(6px);
+    transform: scale(1.015);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
+    transform: scale(1);
   }
 }
 
 /* Custom view transition animations for modern browsers */
 ::view-transition-old(root) {
-  animation: fade-out 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation: fade-out 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 ::view-transition-new(root) {
-  animation: fade-in 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+  animation: fade-in 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes fade-out {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(0.975); }
+  from { opacity: 1; transform: scale(1); filter: blur(0); }
+  to { opacity: 0; transform: scale(0.98); filter: blur(6px); }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: scale(1.025); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(1.02); filter: blur(6px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
 /* Maintain header position during transitions using transition tags */

@@ -53,4 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     app.appendChild(note);
   }
+
+  // 5. Aesthetic Page Exit Transitions (Cross-Browser support)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href && href.endsWith('.html') && !link.target && !href.startsWith('http') && !href.startsWith('#')) {
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 200);
+    }
+  });
 });
