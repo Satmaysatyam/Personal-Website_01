@@ -395,9 +395,8 @@ const site = {
       title: 'Great Hornbill',
       scientific: 'Buceros bicornis',
       group: 'Birds',
-      srcs: ['Photography/_DSC0631.JPG', 'Photography/_DSC0774.JPG'],
+      srcs: ['Photography/_DSC0774.JPG'],
       captions: [
-        'A Great Hornbill (Buceros bicornis) perched among canopy branches in an evergreen forest.',
         'A close view of the majestic Great Hornbill, showcasing its massive bill and yellow casque.'
       ],
       emoji: '🪶'
@@ -488,10 +487,9 @@ const site = {
       title: 'Indian Muntjac / Barking Deer',
       scientific: 'Muntiacus muntjak',
       group: 'Mammals',
-      srcs: ['Photography/_DSC0525.JPG', 'Photography/_DSC0538.JPG'],
+      srcs: ['Photography/_DSC0525.JPG'],
       captions: [
-        'An Indian Muntjac or Barking Deer (Muntiacus muntjak) scaling a steep, mossy slope in a dense forested ravine.',
-        'Keeping alert while navigating the steep terrain of its forest habitat.'
+        'An Indian Muntjac or Barking Deer (Muntiacus muntjak) scaling a steep, mossy slope in a dense forested ravine.'
       ],
       emoji: '🦌'
     },
