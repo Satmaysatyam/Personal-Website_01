@@ -6,9 +6,10 @@ try {
     Write-Host "Server started successfully."
     Write-Host "Listening on http://localhost:$port/"
     Write-Host "Press Ctrl+C to stop the server."
-} catch {
+}
+catch {
     Write-Error "Failed to start listener. Make sure port $port is not in use and you have appropriate permissions."
-    exit 1
+    exit 1 
 }
 
 $currentDir = (Get-Item -Path ".").FullName
@@ -33,15 +34,15 @@ while ($listener.IsListening) {
             $extension = [System.IO.Path]::GetExtension($filePath).ToLower()
             $contentType = switch ($extension) {
                 ".html" { "text/html; charset=utf-8" }
-                ".css"  { "text/css" }
-                ".js"   { "application/javascript" }
-                ".png"  { "image/png" }
-                ".jpg"  { "image/jpeg" }
+                ".css" { "text/css" }
+                ".js" { "application/javascript" }
+                ".png" { "image/png" }
+                ".jpg" { "image/jpeg" }
                 ".jpeg" { "image/jpeg" }
-                ".gif"  { "image/gif" }
-                ".svg"  { "image/svg+xml" }
+                ".gif" { "image/gif" }
+                ".svg" { "image/svg+xml" }
                 ".json" { "application/json" }
-                ".wav"  { "audio/wav" }
+                ".wav" { "audio/wav" }
                 default { "application/octet-stream" }
             }
             
@@ -49,13 +50,15 @@ while ($listener.IsListening) {
             $response.ContentType = $contentType
             $response.ContentLength64 = $bytes.Length
             $response.OutputStream.Write($bytes, 0, $bytes.Length)
-        } else {
+        }
+        else {
             $response.StatusCode = 404
             $bytes = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found: $decodedPath")
             $response.OutputStream.Write($bytes, 0, $bytes.Length)
         }
         $response.Close()
-    } catch {
+    }
+    catch {
         # Log error but don't stop the server
         Write-Host "Error handling request: $_"
     }
