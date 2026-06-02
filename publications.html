@@ -417,6 +417,7 @@
               <img src="${p.img}" alt="${p.title}" loading="lazy">
               <div class="pub-caption">
                 <span>${p.id === 'bird_flocks' ? '📊' : '📸'} ${p.speciesName}</span>
+                ${p.imgCredit ? `<br><span class="pub-credit" style="font-size: 0.72rem; opacity: 0.8; font-weight: normal; margin-top: 4px; display: inline-block;">Photo: ${p.imgCredit}</span>` : ''}
               </div>
             </div>
           </div>

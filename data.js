@@ -81,7 +81,8 @@ const site = {
       url: 'https://doi.org/10.29103/joms.v2i3.21664',
       note: 'A comprehensive study combining genetics, ecological niche modeling, and field surveys to identify threat zones and propose critical conservation management plans for the short-tailed sea snake along the Indian coast.',
       speciesName: 'Short-tailed Sea Snake (Hydrophis curtus)',
-      img: 'Photography/sea_snake_conservation.png',
+      img: 'Photography/Hydrophis_curtus_350251401.jpg',
+      imgCredit: 'Svetlana Tsarakhova / iNaturalist (CC0)',
       citations: {
         apa: 'Hatkar, P., Gupta, S., & Ramesh, C. (2025). From genes to ecosystems: A multidisciplinary approach to understanding and conservation challenges for the short-tailed sea snake Hydrophis curtus (Shaw, 1802) in India. Journal of Marine Studies, 2(3), 21664. https://doi.org/10.29103/joms.v2i3.21664',
         mla: 'Hatkar, Prachi, Satyam Gupta, and Chinnasamy Ramesh. "From Genes to Ecosystems: A Multidisciplinary Approach to Understanding and Conservation Challenges for the Short-Tailed Sea Snake Hydrophis curtus (Shaw, 1802) in India." Journal of Marine Studies, vol. 2, no. 3, 2025, 21664, https://doi.org/10.29103/joms.v2i3.21664.',
