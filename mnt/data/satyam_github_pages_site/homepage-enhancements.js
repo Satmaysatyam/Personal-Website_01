@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coords: [12.115, 79.843],
         title: "Kazhuveli Wildlife Sanctuary",
         emoji: "🐦",
-        desc: "Wetland Ecology: Migratory shorebird census, species richness monitoring, and wetland habitat surveys."
+        desc: "Avian Ecology: Migratory waterbird surveys, species richness monitoring, and wetland habitat mapping."
       },
       {
         coords: [14.619, 74.844],
@@ -243,14 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         coords: [22.466, 69.066],
         title: "Okha, Gulf of Kutch",
-        emoji: "🐍",
-        desc: "Marine Herpetology: Field surveys and genetic connectivity sampling of the Short-tailed Sea Snake (Hydrophis curtus)."
+        emoji: "🐬",
+        desc: "Marine Conservation: Seagrass habitat mapping and dugong surveys for the WII CAMPA Dugong Project, alongside marine reptile research."
       },
       {
         coords: [10.285, 79.851],
         title: "Point Calimere",
-        emoji: "🐬",
-        desc: "Marine Conservation: Seagrass mapping and habitat connectivity assessments for the CAMPA Dugong Conservation Project."
+        emoji: "🐦",
+        desc: "Avian Ecology: Migratory shorebird population monitoring, bird banding surveys, and coastal wetland studies."
       }
     ];
 
