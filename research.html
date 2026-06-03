@@ -54,7 +54,7 @@
     
     .fig-img-wrap {
       position: relative;
-      height: 220px;
+      height: 450px;
       overflow: hidden;
       background: #f0ebe1;
     }
@@ -62,7 +62,7 @@
     .fig-img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
@@ -192,6 +192,54 @@
       opacity: 1;
       background: rgba(255,255,255,0.15);
       transform: scale(1.05);
+    }
+
+    /* --- Carousel Styling --- */
+    .research-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--radius2);
+      padding: 10px 0;
+    }
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 100%;
+    }
+    .carousel-item {
+      min-width: 100%;
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      padding: 5px; /* space for box-shadow */
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      pointer-events: none;
+    }
+    .carousel-btn {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      margin: 0 10px;
+      font-size: 16px;
+      color: var(--ink);
+      transition: all 0.2s;
+    }
+    .carousel-btn:hover {
+      background: white;
+      transform: scale(1.1);
     }
 
     /* --- Publications Section Styling --- */
@@ -512,6 +560,93 @@
         order: -1;
       }
     }
+    
+    /* --- Grants & Funding Styling --- */
+    .grants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .grant-card {
+      background: white;
+      border: 1px solid rgba(22, 49, 38, 0.08);
+      border-radius: var(--radius2);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(13,33,25,0.04);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .grant-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(13,33,25,0.08);
+      border-color: rgba(11, 93, 67, 0.15);
+    }
+    .grant-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .grant-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: white;
+      border: 1px solid rgba(22, 49, 38, 0.06);
+      padding: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      flex-shrink: 0;
+    }
+    .grant-info {
+      flex-grow: 1;
+    }
+    .grant-title {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .grant-agency {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .grant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .grant-amount {
+      font-size: 0.82rem;
+      background: rgba(217, 164, 65, 0.15);
+      color: #9c6c0b;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+    .grant-year {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 700;
+      background: rgba(22, 49, 38, 0.06);
+      padding: 5px 12px;
+      border-radius: 6px;
+    }
+    .grant-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(22, 49, 38, 0.12);
+    }
   </style>
 </head>
 <body>
@@ -544,6 +679,19 @@
         
         <!-- Publications List Container -->
         <div class="pub-list" id="pubList"></div>
+      </section>
+
+      <!-- Grants & Funding Section -->
+      <section id="page-grants" class="page" style="margin-top: 50px; border-top: 1px solid rgba(22, 49, 38, 0.08); padding-top: 40px;">
+        <div class="section-title">
+          <div>
+            <h2>Grants & Funding</h2>
+            <p>Fellowships, research grants, and travel awards supporting my academic journey and fieldwork.</p>
+          </div>
+          <span class="badge">Awards</span>
+        </div>
+        
+        <div class="grants-grid" id="grantsGrid"></div>
       </section>
     </main>
 
@@ -612,44 +760,88 @@
         
         const tab = site.researchTabs.find(t => t.id === activeResearch);
         
-        const imagesHtml = tab.images.map((img, idx) => `
-          <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
-            <div class="fig-img-wrap">
-              <img src="${img.src}" alt="${img.caption}" loading="lazy">
-              <span class="fig-badge">Figure ${idx + 1}</span>
+        let imagesHtml = '';
+        if (tab.imageGroups) {
+          imagesHtml = tab.imageGroups.map((group, groupIdx) => `
+            <div style="margin-bottom: 30px;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: var(--ink); border-bottom: 2px solid var(--brand); display: inline-block; padding-bottom: 4px;">${group.groupName}</h4>
+              <div class="research-carousel">
+                <div class="carousel-inner" id="carouselInner-${tab.id}-${groupIdx}">
+                  ${group.images.map((img, idx) => `
+                    <div class="carousel-item ${idx === 0 ? 'active' : ''}" data-idx="${idx}">
+                      <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
+                        <div class="fig-img-wrap">
+                          <img src="${img.src}" alt="${img.caption}" loading="lazy">
+                          <span class="fig-badge">Figure ${idx + 1} of ${group.images.length}</span>
+                        </div>
+                        <div class="fig-caption">${img.caption}</div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+                ${group.images.length > 1 ? `
+                <div class="carousel-controls">
+                  <button class="carousel-btn prev-btn" onclick="moveCarousel('${tab.id}-${groupIdx}', -1)">❮</button>
+                  <button class="carousel-btn next-btn" onclick="moveCarousel('${tab.id}-${groupIdx}', 1)">❯</button>
+                </div>
+                ` : ''}
+              </div>
             </div>
-            <div class="fig-caption">${img.caption}</div>
-          </div>
-        `).join('');
+          `).join('');
+        } else if (tab.images && tab.images.length > 0) {
+          imagesHtml = `
+            <div class="research-carousel">
+              <div class="carousel-inner" id="carouselInner-${tab.id}">
+                ${tab.images.map((img, idx) => `
+                  <div class="carousel-item ${idx === 0 ? 'active' : ''}" data-idx="${idx}">
+                    <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
+                      <div class="fig-img-wrap">
+                        <img src="${img.src}" alt="${img.caption}" loading="lazy">
+                        <span class="fig-badge">Figure ${idx + 1} of ${tab.images.length}</span>
+                      </div>
+                      <div class="fig-caption">${img.caption}</div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              ${tab.images.length > 1 ? `
+              <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" onclick="moveCarousel('${tab.id}', -1)">❮</button>
+                <button class="carousel-btn next-btn" onclick="moveCarousel('${tab.id}', 1)">❯</button>
+              </div>
+              ` : ''}
+            </div>
+          `;
+        }
 
         const logosHtml = tab.logos && tab.logos.length > 0 ? `
-          <div class="research-logos-section" style="margin-top: 28px; border-top: 1px solid rgba(22, 49, 38, 0.08); padding-top: 18px;">
-            <span class="profile-label" style="display: block; font-size: 0.72rem; color: var(--brand); letter-spacing: 0.08em; font-weight: 800; margin-bottom: 12px; text-transform: uppercase;">Affiliated Institutions / Sponsors</span>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-              ${tab.logos.map(logo => {
-                if (logo.abbr === 'ATBC') {
-                  return `
-                    <div class="inst-badge" title="${logo.name}">
-                      <img src="logos/atbc.png" alt="ATBC" style="height: 18px; width: auto; object-fit: contain;">
-                      <span>${logo.name}</span>
-                    </div>
-                  `;
-                }
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end;">
+            ${tab.logos.map(logo => {
+              if (logo.logoUrl) {
                 return `
-                  <div class="inst-badge" title="${logo.name}">
-                    <div style="width: 22px; height: 22px; border-radius: 50%; background: ${logo.color}; color: white; display: grid; place-items: center; font-size: 0.6rem; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">${logo.abbr}</div>
-                    <span>${logo.name}</span>
+                  <div class="inst-badge" title="${logo.name}" style="background: white; padding: 4px 6px; border: 1px solid rgba(0,0,0,0.06); border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); display: flex; align-items: center;">
+                    <img src="${logo.logoUrl}" alt="${logo.abbr}" style="height: 24px; width: auto; max-width: 70px; object-fit: contain;">
+                    <span style="display:none;">${logo.name}</span>
                   </div>
                 `;
-              }).join('')}
-            </div>
+              }
+              return `
+                <div class="inst-badge" title="${logo.name}">
+                  <div style="width: 24px; height: 24px; border-radius: 50%; background: ${logo.color}; color: white; display: grid; place-items: center; font-size: 0.65rem; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">${logo.abbr}</div>
+                  <span style="display:none;">${logo.name}</span>
+                </div>
+              `;
+            }).join('')}
           </div>
         ` : '';
 
         researchPanel.innerHTML = `
           <div class="panel-inner split">
             <div>
-              <span class="badge">${tab.emoji} ${tab.title}</span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
+                <span class="badge" style="margin-bottom: 0;">${tab.emoji} ${tab.title}</span>
+                ${logosHtml}
+              </div>
               <h3 style="margin-top:14px; font-size:1.6rem; font-weight:800; line-height:1.25;">${tab.intro}</h3>
               <p style="margin-top:12px; font-size:1.02rem; line-height:1.65; color:var(--muted);">${tab.desc}</p>
               <div class="divider"></div>
@@ -661,7 +853,6 @@
                   </div>
                 `).join('')}
               </div>
-              ${logosHtml}
             </div>
             <div>
               <div class="research-visuals-col">
@@ -681,6 +872,16 @@
           });
         });
       }
+
+      window.moveCarousel = function(tabId, dir) {
+        const inner = document.getElementById(`carouselInner-${tabId}`);
+        const items = inner.querySelectorAll('.carousel-item');
+        let activeIdx = Array.from(items).findIndex(item => item.classList.contains('active'));
+        items[activeIdx].classList.remove('active');
+        activeIdx = (activeIdx + dir + items.length) % items.length;
+        items[activeIdx].classList.add('active');
+        inner.style.transform = `translateX(-${activeIdx * 100}%)`;
+      };
 
       // Lightbox functions
       function openLightbox(src, caption) {
@@ -849,7 +1050,31 @@
         });
       });
       
+      // Render Grants
+      function renderGrants() {
+        const grantsGrid = document.getElementById('grantsGrid');
+        if (!grantsGrid || !site.grants) return;
+        
+        grantsGrid.innerHTML = site.grants.map(g => `
+          <div class="grant-card">
+            <div class="grant-header">
+              <img src="${g.logo}" alt="${g.agency} logo" class="grant-logo" loading="lazy" onerror="this.style.display='none'">
+              <div class="grant-info">
+                <h3 class="grant-title">${g.title}</h3>
+                <div class="grant-agency">${g.agency}</div>
+              </div>
+            </div>
+            <p class="grant-desc">${g.note}</p>
+            <div class="grant-meta">
+              <span class="grant-amount">${g.amount}</span>
+              <span class="grant-year">${g.year}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
       renderPublications();
+      renderGrants();
     });
   </script>
 </body>

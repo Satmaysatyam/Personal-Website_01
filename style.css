@@ -472,6 +472,77 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
   100% { transform: translateY(-15px) rotate(12deg); }
 }
 
+/* --- Lemur Collective Movement Animation --- */
+.lemur-troop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.lemur {
+  position: absolute;
+  bottom: 8%;
+  left: -15%;
+}
+
+.lemur-sprite {
+  font-size: 2.6rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+
+/* The lemurs sit together and groove to a beat */
+.lemur-troop {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  z-index: 10;
+}
+
+.lemur {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animate the bouncing groove */
+.lemur-sprite {
+  animation: groove-bounce 0.6s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+  transform-origin: bottom center;
+}
+
+.lemur.leader .lemur-sprite { animation-delay: 0s; }
+.lemur.f1 .lemur-sprite { animation-delay: 0.1s; }
+.lemur.f2 .lemur-sprite { animation-delay: 0.2s; }
+.lemur.f3 .lemur-sprite { animation-delay: 0.3s; }
+
+@keyframes groove-bounce {
+  0%   { transform: translateY(0) scale(1.02, 0.96); }
+  100% { transform: translateY(-12px) scale(0.98, 1.04); }
+}
+
+.call-bubble {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  font-size: 1.8rem;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: pop-bubble 16s infinite;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+@keyframes pop-bubble {
+  0%, 26% { opacity: 0; transform: scale(0.5); }
+  28%, 43% { opacity: 1; transform: scale(1.1); }
+  45%, 100% { opacity: 0; transform: scale(0.5); }
+}
+
 /* --- Ambient Bioacoustics Waveform --- */
 .hero-waveform {
   position: absolute;
@@ -766,6 +837,35 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0);
+}
+
+/* --- Shared Filter Tabs Styling --- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 30px;
+}
+.tab {
+  border: 1px solid rgba(22, 49, 38, 0.12);
+  background: white;
+  color: var(--muted);
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tab:hover {
+  background: rgba(11, 93, 67, 0.05);
+  color: var(--ink);
+  border-color: var(--brand);
+}
+.tab.active {
+  background: var(--brand);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(11, 93, 67, 0.18);
 }
 
 

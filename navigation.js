@@ -37,8 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!document.querySelector('.footer')) {
     const footer = document.createElement('footer');
     footer.className = 'footer';
+    
+    let licenseHtml = '';
+    if (activePageId === 'photography' || activePageId === 'audio') {
+      licenseHtml = `<div class="license-notice" style="margin-top: 10px; font-size: 0.82rem; opacity: 0.85; color: var(--muted);">
+        All personal photography, audio recordings, and media on this page are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: var(--brand); font-weight: 600;">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.
+      </div>`;
+    }
+
     footer.innerHTML = `
-      Designed as a modular multi-page website with modern CSS view transitions.
+      <div>Designed as a modular multi-page website with modern CSS view transitions.</div>
+      ${licenseHtml}
     `;
     app.appendChild(footer);
   }

@@ -27,6 +27,13 @@
           <button class="btn primary" id="stopAllBtn">Stop all sounds</button>
         </div>
 
+        <!-- Filter Tabs -->
+        <div class="tabs" id="audioTabs" style="margin-top: 15px;">
+          <button class="tab active" data-group="all">All Sounds</button>
+          <button class="tab" data-group="Amphibians">🐸 Amphibians</button>
+          <button class="tab" data-group="Birds">🐦 Birds</button>
+        </div>
+
         <div class="sound-grid" id="soundGrid"></div>
       </section>
     </main>
@@ -40,6 +47,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       const audioGrid = document.getElementById('soundGrid');
       const stopAllBtn = document.getElementById('stopAllBtn');
+      const audioTabs = document.getElementById('audioTabs');
+      const tabs = audioTabs.querySelectorAll('.tab');
+
+      let activeGroup = 'all';
 
       const audioState = site.sounds.map(s => {
         const audioEl = new Audio(s.src);
@@ -52,6 +63,16 @@
         };
       });
 
+      // Bind filter tabs click events
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          activeGroup = tab.dataset.group;
+          renderAudio();
+        });
+      });
+
       function stopSound(card) {
         if (card.audioEl) {
           card.audioEl.pause();
@@ -61,7 +82,11 @@
       }
 
       function renderAudio() {
-        audioGrid.innerHTML = audioState.map(card => `
+        const filtered = activeGroup === 'all'
+          ? audioState
+          : audioState.filter(card => card.group === activeGroup);
+
+        audioGrid.innerHTML = filtered.map(card => `
           <div class="sound-card ${card.playing ? 'playing' : ''}" data-id="${card.id}">
             <div class="sound-top" data-action="toggle" style="background: linear-gradient(180deg, rgba(8,18,14,0.2), rgba(8,18,14,0.85)), url('${card.img}'); background-size: cover; background-position: center; min-height: 420px; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
@@ -83,10 +108,15 @@
                 <div>📸 Photo: <strong>${card.imgCredit}</strong></div>
               </div>
 
-              <div class="audio-controls" style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px; border-top: 1px solid rgba(22,49,38,0.06); padding-top: 10px;">
+              <div class="audio-controls" style="display: flex; flex-direction: column; gap: 12px; margin-top: 4px; border-top: 1px solid rgba(22,49,38,0.06); padding-top: 10px;">
                 <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
                   <span class="subtle" style="font-size: 0.85rem; font-weight: 600;">Volume</span>
                   <input class="slider" type="range" min="0" max="1" step="0.01" value="${card.volume}" data-action="volume" style="flex-grow: 1; max-width: 140px;" />
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 4px;">
+                  <a href="${card.src}" download="${card.name.replace(/[^a-zA-Z0-9]/g, '_')}_-_Recorded_by_${card.audioCredit.replace(/[^a-zA-Z0-9]/g, '_')}.${card.src.split('.').pop()}" class="btn secondary" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; font-size: 0.8rem; border-radius: 999px; text-decoration: none; border: 1px solid rgba(11,93,67,0.15); background: white; color: var(--brand); font-weight: 700; cursor: pointer; transition: all 0.2s ease; width: 100%; box-sizing: border-box; text-align: center;" onmouseover="this.style.background='rgba(11, 93, 67, 0.05)';" onmouseout="this.style.background='white';">
+                    📥 Download Audio (CC-BY-4.0)
+                  </a>
                 </div>
               </div>
             </div>

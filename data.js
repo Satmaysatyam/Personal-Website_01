@@ -23,12 +23,14 @@ const site = {
         'Conducted extensive understory arthropod sampling using foliage-sweeping and trunk-bark search methods.'
       ],
       images: [
-        { src: 'Photography/bird_network_plot.png', caption: 'Vocal Centrality Network Plot representing social structure' },
-        { src: 'Photography/Field photos/bioacoustic_recording.jpg', caption: 'Conducting bioacoustic recordings in Eaglenest Wildlife Sanctuary' }
+        { src: 'Research/MSF1.JPG', caption: 'Vocal Centrality Network Plot representing social structure' },
+        { src: 'Research/MSF2.JPG', caption: 'Conducting bioacoustic recordings in Eaglenest Wildlife Sanctuary' },
+        { src: 'Research/MSF3.JPG', caption: 'Fieldwork in the Eastern Himalayas' },
+        { src: 'Research/MSF4.JPG', caption: 'Mixed-Species Flock Observations' }
       ],
       logos: [
-        { name: 'Pondicherry University', abbr: 'PU', color: '#0b5d43', bg: '#f6f2ea' },
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed' }
+        { name: 'Pondicherry University', abbr: 'PU', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/pondiuni.edu.in' },
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' }
       ]
     },
     {
@@ -43,12 +45,18 @@ const site = {
         'Analyzing call structural variations of endemic tree and bush frogs relative to microclimate.'
       ],
       images: [
-        { src: 'Photography/Field photos/frog_measurement.jpg', caption: 'Taking morphometric measurements (SVL and weight) of a bush frog' },
-        { src: 'Photography/Field photos/herp_fieldwork.jpg', caption: 'Nocturnal survey and snake capture during herpetological indexing' }
+        { src: 'Research/Amphibian1.jpg', caption: 'Taking morphometric measurements (SVL and weight) of a bush frog' },
+        { src: 'Research/Amphibian2.jpg', caption: 'Nocturnal survey and snake capture during herpetological indexing' },
+        { src: 'Research/Amphibian3.jpg', caption: 'Observing amphibians in their natural habitat' },
+        { src: 'Research/Amphibian4.jpeg', caption: 'Dense forest stream habitat for amphibian surveys' },
+        { src: 'Research/Amphibian5.jpeg', caption: 'Searching for vocalizing amphibians in the undergrowth' },
+        { src: 'Research/Amphibian6.jpeg', caption: 'Documenting amphibian microhabitats' },
+        { src: 'Research/Amphibian7.jpeg', caption: 'Field observations during monsoon surveys' },
+        { src: 'Research/Amphibian8.jpeg', caption: 'Recording acoustic data in natural amphibian habitats' }
       ],
       logos: [
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed' },
-        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea' }
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' },
+        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea', logoUrl: 'logos/atbc.png' }
       ]
     },
     {
@@ -64,13 +72,32 @@ const site = {
         '<b>Summer Intern (April 2022 - July 2022)</b>: Worked with Dr. Umesh Srinivasan (IISc) to estimate arthropod prey availability for insectivorous birds along an elevational gradient in Eaglenest Wildlife Sanctuary.',
         '<b>GIS Intern (May 2021)</b>: Completed training in GIS and Remote Sensing applications for biodiversity conservation at WALMI, Bhopal.'
       ],
-      images: [
-        { src: 'Photography/_DSC0328.png', caption: 'Evergreen Forest Canopy: assessing canopy cover and habitat complexity for field surveys' },
-        { src: 'personal photos/_DSC0620.JPG', caption: 'Conducting field research and data collection during fieldwork' }
+      imageGroups: [
+        {
+          groupName: 'Wildlife Institute of India',
+          images: [
+            { src: 'Research/WII1.jpeg', caption: 'Sunset view over the estuary and mangrove habitats' },
+            { src: 'Research/WII2.jpeg', caption: 'Surveying sandy shorelines adjacent to mangrove forests' },
+            { src: 'Research/WII3.jpeg', caption: 'Mangrove pneumatophores exposed during low tide' },
+            { src: 'Research/WII4.jpeg', caption: 'Collection and sorting of marine gastropod shells' },
+            { src: 'Research/WII5.jpeg', caption: 'Coastal landscape during evening surveys' }
+          ]
+        },
+        {
+          groupName: 'Achanakmar Tiger Reserve',
+          images: [
+            { src: 'Research/Achanakmar1.jpeg', caption: 'Documenting biodiversity in Achanakmar Tiger Reserve' },
+            { src: 'Research/Achanakmar2.jpeg', caption: 'Forest trails used for wildlife surveys' },
+            { src: 'Research/Achanakmar3.jpeg', caption: 'Observing flora and fauna for the People\'s Biodiversity Register' },
+            { src: 'Research/Achanakmar4.jpeg', caption: 'Habitat assessment in the core forest areas' },
+            { src: 'Research/Achanakmar5.jpeg', caption: 'Interaction with local communities for traditional knowledge' },
+            { src: 'Research/Achanakmar6.jpeg', caption: 'Field data collection in dense deciduous forests' }
+          ]
+        }
       ],
       logos: [
-        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea' },
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed' },
+        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/wii.gov.in' },
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' },
         { name: 'Chhattisgarh Forest Department', abbr: 'CG-FD', color: '#163126', bg: '#f4f8f6' },
         { name: 'Haryana Forest Department', abbr: 'HR-FD', color: '#163126', bg: '#f4f8f6' },
         { name: 'WALMI Bhopal', abbr: 'WALMI', color: '#174f7b', bg: '#f0f5fa' }
@@ -89,14 +116,50 @@ const site = {
         '<b>Wildlife Tourism Volunteer (March 2021)</b>: Collected data for the Centre for Wildlife Sciences (CWS) project examining nature-viewing preferences of tourists in Kanha Tiger Reserve.',
         '<b>Vulture Census (March 2021)</b>: Assisted the Madhya Pradesh Forest Department in conducting the Vulture Census at Anuppur.'
       ],
-      images: [
-        { src: 'Photography/Leopard1-0435.jpg', caption: 'Indian Leopard (Panthera pardus fusca) captured in central India camera traps' },
-        { src: 'Photography/spotted_deer2-0140.png', caption: 'Spotted Deer (Axis axis) herd along a deciduous forest meadow edge in central India' }
+      imageGroups: [
+        {
+          groupName: 'WWF-India',
+          images: [
+            { src: 'Research/WWf1.jpeg', caption: 'Setting up camera traps for tiger occupancy surveys' },
+            { src: 'Research/WWf2.jpeg', caption: 'Checking camera trap data in central Indian landscapes' },
+            { src: 'Research/WWf3.jpeg', caption: 'Tracking animal signs and pugmarks' },
+            { src: 'Research/WWf4.jpeg', caption: 'Fieldwork in the Kanha-Pench corridor' }
+          ]
+        },
+        {
+          groupName: 'Wildlife Research & Conservation Society (WRCS)',
+          images: [
+            { src: 'Research/WRCS1.jpeg', caption: 'Monitoring forest plots for conservation research' },
+            { src: 'Research/WRCS2.jpeg', caption: 'Data collection on habitat usage' },
+            { src: 'Research/WRCS3.jpeg', caption: 'Field surveys in mixed forest patches' },
+            { src: 'Research/WRCS4.jpeg', caption: 'Assessing human-wildlife interaction zones' },
+            { src: 'Research/WRCS5.jpeg', caption: 'Documenting species presence via tracks and signs' },
+            { src: 'Research/WRCS6.jpeg', caption: 'Landscape level ecological surveys' }
+          ]
+        },
+        {
+          groupName: 'Centre for Wildlife Studies (CWS)',
+          images: [
+            { src: 'Research/CWS1.jpeg', caption: 'Conducting tourism preference surveys' },
+            { src: 'Research/CWS2.jpeg', caption: 'Interviewing stakeholders around protected areas' },
+            { src: 'Research/CWS3.jpeg', caption: 'Analyzing human dimensions of wildlife conservation' },
+            { src: 'Research/CWS4.jpeg', caption: 'Field data collection for socioeconomic studies' }
+          ]
+        },
+        {
+          groupName: 'Vulture Census',
+          images: [
+            { src: 'Research/Vulture1.jpeg', caption: 'Monitoring vulture nesting sites' },
+            { src: 'Research/Vulture2.jpeg', caption: 'Vantage point surveys during the Vulture Census' },
+            { src: 'Research/Vulture3.jpeg', caption: 'Identifying vulture species in flight' },
+            { src: 'Research/Vulture4.jpeg', caption: 'Collaborating with Forest Department staff for census' }
+          ]
+        }
       ],
       logos: [
-        { name: 'World Wide Fund for Nature India', abbr: 'WWF', color: '#163126', bg: '#f4f8f6' },
-        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea' },
-        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea' },
+        { name: 'World Wide Fund for Nature India', abbr: 'WWF', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://logo.clearbit.com/wwfindia.org' },
+        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/wrcsindia.org' },
+        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/cwsindia.org' },
         { name: 'Madhya Pradesh Forest Department', abbr: 'MP-FD', color: '#163126', bg: '#f4f8f6' }
       ]
     }
@@ -146,16 +209,30 @@ const site = {
   ],
   sounds: [
     {
+      id: 'ccw',
+      name: 'Chestnut-crowned Warbler',
+      scientific: 'Phylloscopus castaniceps',
+      habitat: 'Eastern Himalayas',
+      voice: 'call',
+      emoji: '🐦',
+      src: 'Audio Bank/Chestnut-crowned Warbler.wav',
+      img: 'https://cdn.download.ams.birds.cornell.edu/api/v2/asset/389668901/1200',
+      imgCredit: 'Macaulay Library',
+      audioCredit: 'Satyam Gupta',
+      group: 'Birds'
+    },
+    {
       id: 'gcw',
-      name: 'Green-crowned Warbler',
-      scientific: 'Seicercus burkii',
+      name: 'Grey-cheeked Warbler',
+      scientific: 'Phylloscopus poliogenys',
       habitat: 'Eastern Himalayas',
       voice: 'call',
       emoji: '🐦',
       src: 'Audio Bank/GCW.wav',
       img: 'Audio Bank/GCW.jpg',
-      imgCredit: 'Shishir Bhat / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Birds'
     },
     {
       id: 'ghcf',
@@ -166,8 +243,9 @@ const site = {
       emoji: '🐦',
       src: 'Audio Bank/GHCF.wav',
       img: 'Audio Bank/GHCF.jpg',
-      imgCredit: 'L. Shyamal / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Birds'
     },
     {
       id: 'rtm',
@@ -178,8 +256,9 @@ const site = {
       emoji: '🐦',
       src: 'Audio Bank/RTM.wav',
       img: 'Audio Bank/RTM.jpg',
-      imgCredit: 'L. Shyamal / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Birds'
     },
     {
       id: 'hylarana',
@@ -188,22 +267,11 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      src: 'Audio Bank/Hylarana_indica.wav',
-      img: 'Audio Bank/Hylarana_indica.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
-    },
-    {
-      id: 'hylarana_ind_01',
-      name: 'Indian Golden-backed Frog (Call 2)',
-      scientific: 'Hylarana indica',
-      habitat: 'Western Ghats',
-      voice: 'croak',
-      emoji: '🐸',
       src: 'Audio Bank/H.indica_Ind_01 (mp3cut.net).wav',
       img: 'Audio Bank/Hylarana_indica.jpg',
       imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'hydrophylax',
@@ -212,22 +280,11 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      src: 'Audio Bank/H.intermedius_Ind_07.WAV',
-      img: 'Audio Bank/H_intermedius.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
-    },
-    {
-      id: 'intermedius_ind_14',
-      name: 'Intermediate Golden-backed Frog (Call 2)',
-      scientific: 'Hydrophylax intermedius',
-      habitat: 'Western Ghats',
-      voice: 'croak',
-      emoji: '🐸',
       src: 'Audio Bank/H.intermedius_Ind_14 (mp3cut.net).wav',
       img: 'Audio Bank/H_intermedius.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'malabaricus_frog',
@@ -236,22 +293,11 @@ const site = {
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
-      src: 'Audio Bank/R.malabaricus_Ind_08.WAV',
-      img: 'Audio Bank/R_malabaricus.jpg',
-      imgCredit: 'Kalyan Varma / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
-    },
-    {
-      id: 'malabaricus_ind_11',
-      name: 'Malabar Gliding Frog (Call 2)',
-      scientific: 'Rhacophorus malabaricus',
-      habitat: 'Western Ghats',
-      voice: 'croak',
-      emoji: '🐸',
       src: 'Audio Bank/R.malabaricus_Ind_11 (mp3cut.net).wav',
-      img: 'Audio Bank/R_malabaricus.jpg',
-      imgCredit: 'Kalyan Varma / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Photography/MGF1.png',
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'curtipes',
@@ -261,57 +307,49 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/C.curtipes_Ind_01 (mp3cut.net).wav',
-      img: 'Audio Bank/Hylarana_indica.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Photography/BCF2.png',
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'cyanophlyctis',
-      name: 'Skittering Frog',
+      name: 'Indian Skittering Frog',
       scientific: 'Euphlyctis cyanophlyctis',
       habitat: 'Western Ghats / Wetlands',
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/E.cyanophlyctis_Ind_08 (mp3cut.net).wav',
-      img: 'Audio Bank/Hylarana_indica.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Audio Bank/E_cyanophlyctis.jpg',
+      imgCredit: 'iNaturalist',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'bahuvistara',
-      name: 'Sahyadri Golden-backed Frog',
+      name: 'Widespread Fungoid Frog',
       scientific: 'Hydrophylax bahuvistara',
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/H.bahuvistara_Ind_10 (mp3cut.net).wav',
-      img: 'Audio Bank/H_intermedius.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Audio Bank/H_bahuvistara.jpg',
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
-      id: 'syhadrensis_ind_13',
-      name: 'Syhadri Pygmy Frog (Call 1)',
-      scientific: 'Minervarya syhadrensis',
-      habitat: 'Western Ghats / Grasslands',
-      voice: 'chirp',
-      emoji: '🐸',
-      src: 'Audio Bank/M.krishnan_Ind_13 (mp3cut.net).wav',
-      img: 'Audio Bank/H_intermedius.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
-    },
-    {
-      id: 'syhadrensis_ind_18',
-      name: 'Syhadri Pygmy Frog (Call 2)',
+      id: 'syhadrensis',
+      name: 'Syhadri Pygmy Frog',
       scientific: 'Minervarya syhadrensis',
       habitat: 'Western Ghats / Grasslands',
       voice: 'chirp',
       emoji: '🐸',
       src: 'Audio Bank/M.syhadrensis_Ind_18 (mp3cut.net).wav',
-      img: 'Audio Bank/H_intermedius.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Audio Bank/M_syhadrensis.jpg',
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'amboli',
@@ -321,21 +359,23 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/P.amboli_Ind_19 (mp3cut.net).wav',
-      img: 'Audio Bank/Hylarana_indica.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Photography/ABF1.png',
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'maculatus',
-      name: 'Chunam Tree Frog',
+      name: 'Indian Tree Frog',
       scientific: 'Polypedates maculatus',
       habitat: 'Western Ghats',
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/P.maculatus_Ind_19 (mp3cut.net).wav',
-      img: 'Audio Bank/R_malabaricus.jpg',
-      imgCredit: 'Kalyan Varma / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Audio Bank/P_maculatus.jpg',
+      imgCredit: 'Wikimedia Commons',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'tuberculosus',
@@ -345,9 +385,10 @@ const site = {
       voice: 'croak',
       emoji: '🐸',
       src: 'Audio Bank/P.tuberculosus_Ind_15 (mp3cut.net).wav',
-      img: 'Audio Bank/R_malabaricus.jpg',
-      imgCredit: 'Kalyan Varma / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Photography/MTT1.png',
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'luteolus',
@@ -357,21 +398,23 @@ const site = {
       voice: 'whistle',
       emoji: '🐸',
       src: 'Audio Bank/R.luteolus_Ind_14 (mp3cut.net).wav',
-      img: 'Audio Bank/Hylarana_indica.jpg',
-      imgCredit: 'Shreeram MV / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      img: 'Photography/BEYB1.png',
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Amphibians'
     },
     {
       id: 'soundscape',
-      name: 'Mixed Forest Soundscape',
-      scientific: 'Biophony / Ambient',
-      habitat: 'Any Ecosystem',
-      voice: 'wind',
-      emoji: '🌿',
+      name: 'Canopy Mixed-Species Flock (MSF)',
+      scientific: 'Dawn Chorus / Bioacoustics',
+      habitat: 'Eaglenest Wildlife Sanctuary',
+      voice: 'dawn chorus',
+      emoji: '🐦',
       src: 'Audio Bank/Soundscape.wav',
       img: 'Audio Bank/Soundscape.jpg',
-      imgCredit: 'Hans-Peter Scholz / Wikimedia Commons',
-      audioCredit: 'Satyam Gupta'
+      imgCredit: 'Satyam Gupta',
+      audioCredit: 'Satyam Gupta',
+      group: 'Birds'
     }
   ],
   photos: [
@@ -730,8 +773,63 @@ const site = {
     }
   ],
   art: [
-    { title: 'Field sketch series', medium: 'Ink + graphite', emoji: '✏️', note: 'Reserve one card per artwork.' },
-    { title: 'Spectrogram studies', medium: 'Digital art', emoji: '📈', note: 'Great if you want science and art to blend.' },
-    { title: 'Landscape studies', medium: 'Mixed media', emoji: '🖌️', note: 'Use larger scans for a richer visual feel.' }
+    { title: 'Avian Study I', medium: 'Graphite on Paper', note: 'A detailed study of plumage and form from field observations.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.34.22 PM (1).jpeg' },
+    { title: 'Nature Study II', medium: 'Graphite on Paper', note: 'Capturing the essence of wildlife in its natural habitat.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.34.22 PM.jpeg' },
+    { title: 'Digital Portrait I', medium: 'Procreate', note: 'Scientific illustration highlighting key morphological features.', emoji: '🎨', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.44 PM.jpeg' },
+    { title: 'Flora Study I', medium: 'Watercolors', note: 'Exploring color and texture in botanical subjects.', emoji: '🖌️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.45 PM (1).jpeg' },
+    { title: 'Wildlife Sketch III', medium: 'Graphite on Paper', note: 'Quick field sketch focusing on movement and posture.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.45 PM (2).jpeg' },
+    { title: 'Digital Portrait II', medium: 'Procreate', note: 'A vibrant depiction of local fauna.', emoji: '🎨', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.45 PM.jpeg' },
+    { title: 'Landscape Study I', medium: 'Watercolors', note: 'Atmospheric study of the Eastern Himalayas.', emoji: '🖌️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.46 PM (1).jpeg' },
+    { title: 'Avian Study II', medium: 'Graphite on Paper', note: 'Detailed pencil work capturing intricate feather patterns.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.46 PM (2).jpeg' },
+    { title: 'Digital Portrait III', medium: 'Procreate', note: 'Stylized scientific rendering for educational materials.', emoji: '🎨', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.46 PM.jpeg' },
+    { title: 'Flora Study II', medium: 'Watercolors', note: 'Vibrant colors of the undergrowth.', emoji: '🖌️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.47 PM (1).jpeg' },
+    { title: 'Nature Study IV', medium: 'Graphite on Paper', note: 'Pencil sketch of an amphibian in its microhabitat.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.47 PM (2).jpeg' },
+    { title: 'Digital Portrait IV', medium: 'Procreate', note: 'Detailed illustration of a mixed-species flock participant.', emoji: '🎨', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.47 PM (3).jpeg' },
+    { title: 'Landscape Study II', medium: 'Watercolors', note: 'Morning mist over the canopy.', emoji: '🖌️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.47 PM.jpeg' },
+    { title: 'Avian Study III', medium: 'Graphite on Paper', note: 'Focusing on the beak and facial structure.', emoji: '✏️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.48 PM (1).jpeg' },
+    { title: 'Digital Portrait V', medium: 'Procreate', note: 'Bringing field notes to life digitally.', emoji: '🎨', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.48 PM (2).jpeg' },
+    { title: 'Flora Study III', medium: 'Watercolors', note: 'A delicate study of monsoon blooms.', emoji: '🖌️', src: 'Art/WhatsApp Image 2026-06-03 at 1.35.48 PM.jpeg' }
+  ],
+  grants: [
+    {
+      title: 'DAAD Doctoral Scholarship',
+      agency: 'Deutscher Akademischer Austauschdienst (DAAD)',
+      amount: '€1,400 / month',
+      year: '2025',
+      note: 'Highly prestigious research grant awarded for pursuing doctoral research in Germany, supporting international academic exchange and scientific cooperation.',
+      logo: 'https://www.google.com/s2/favicons?domain=daad.de&sz=128'
+    },
+    {
+      title: 'ASAB Conference Attendance Grant',
+      agency: 'Association for the Study of Animal Behaviour',
+      amount: '£500',
+      year: '2025',
+      note: 'Travel grant awarded for attending the ASAB Winter Conference in Edinburgh, Scotland.',
+      logo: 'https://www.google.com/s2/favicons?domain=asab.org&sz=128'
+    },
+    {
+      title: 'IEC Conference Attendance Grant',
+      agency: 'Koita Centre for Digital Health, Ashoka University',
+      amount: '₹35,000',
+      year: '2025',
+      note: 'Travel grant awarded for attending the International Ethological Congress in Kolkata, India.',
+      logo: 'https://www.google.com/s2/favicons?domain=ashoka.edu.in&sz=128'
+    },
+    {
+      title: 'ATBC Seed Research Grant',
+      agency: 'Association for Tropical Biology and Conservation',
+      amount: '$1,000',
+      year: '2025',
+      note: 'Awarded for the ongoing Amphibian Ecology project in the Western Ghats.',
+      logo: 'https://www.google.com/s2/favicons?domain=tropicalbiology.org&sz=128'
+    },
+    {
+      title: 'DST INSPIRE Scholarship',
+      agency: 'Department of Science and Technology, Govt. of India',
+      amount: '₹4,00,000',
+      year: '2019 - 2024',
+      note: 'Prestigious national scholarship awarded for pursuing higher education in basic and natural sciences.',
+      logo: 'https://online-inspire.gov.in/images/dst-logo.jpg'
+    }
   ]
 };
