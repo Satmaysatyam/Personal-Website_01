@@ -5,42 +5,276 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Satyam Gupta</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- Premium Contact Page Aesthetics --- */
+    .contact-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 2rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 32px 0 rgba(11, 93, 67, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    /* Subtle animated background glowing orbs */
+    .contact-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(11, 93, 67, 0.08) 0%, transparent 60%);
+      animation: rotate-orb 20s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    @keyframes rotate-orb {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .contact-grid-aesthetic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+      align-items: stretch;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid-aesthetic {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .contact-header h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--text-dark), var(--brand-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+
+    .contact-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .social-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .social-pill {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .social-pill:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(11, 93, 67, 0.1);
+      border-color: rgba(11, 93, 67, 0.2);
+    }
+
+    .social-pill .icon-img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    
+    .social-pill .detail {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-left: auto;
+    }
+
+    .contact-form-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .contact-form-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; height: 6px;
+      background: linear-gradient(90deg, var(--brand-primary), var(--brand-light));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      border: 2px solid rgba(0,0,0,0.05);
+      background: #f9f9f9;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      color: var(--text-dark);
+    }
+
+    .form-control::placeholder {
+      color: #bbb;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(11, 93, 67, 0.1);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.2rem;
+      background: var(--brand-primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background: #094733;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(11, 93, 67, 0.3);
+    }
+  </style>
 </head>
 <body>
   <div class="app">
     <!-- Header dynamically injected by navigation.js -->
 
     <main class="section-wrap">
-      <section id="page-contact" class="page">
-        <div class="section-title">
-          <div>
-            <h2>Contact</h2>
-            <p>Keep the contact page simple, polished, and easy to scan. Put collaboration first, then social links.</p>
-          </div>
-          <span class="badge">Collaboration ready</span>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Let’s collaborate</h3>
-            <p>Discuss bioacoustics, mixed-species flock dynamics, landscape conservation, statistics in R, or field storytelling.</p>
-            <div class="contact-links">
-              <a href="mailto:satmaysatyam@gmail.com" class="contact-link"><span>📧 Email</span><span>satmaysatyam@gmail.com</span></a>
-              <a href="https://www.linkedin.com/in/satyamenses/" target="_blank" class="contact-link"><span>💼 LinkedIn</span><span>satyamenses</span></a>
-              <a href="https://www.researchgate.net/profile/Satyam-Gupta-49?ev=hdr_xprf" target="_blank" class="contact-link"><span>🔬 ResearchGate</span><span>Satyam Gupta</span></a>
-              <a href="https://x.com/Satmaysatyam" target="_blank" class="contact-link"><span>𝕏 X / Twitter</span><span>@Satmaysatyam</span></a>
-              <a href="https://www.instagram.com/satyamenses/" target="_blank" class="contact-link"><span>📸 Instagram</span><span>@satyamenses</span></a>
+      <section id="page-contact" class="page" style="margin-top: 2rem; margin-bottom: 4rem;">
+        
+        <div class="contact-wrapper">
+          <div class="contact-grid-aesthetic">
+            
+            <!-- Left Side: Header & Socials -->
+            <div class="contact-info">
+              <div class="contact-header">
+                <h2>Let's work<br>together.</h2>
+                <p>I am always open to discussing ecology, bioacoustics, collective behaviour, mentoring, or potential collaborations. Feel free to drop a message or connect on social media.</p>
+              </div>
+              
+              <div class="social-pills">
+                <a href="mailto:satmaysatyam@gmail.com" class="social-pill">
+                  <img src="https://cdn.simpleicons.org/gmail" alt="Email" class="icon-img">
+                  <span class="label">Email Me</span>
+                  <span class="detail">satmaysatyam@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/satyamenses/" target="_blank" class="social-pill">
+                  <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn" class="icon-img">
+                  <span class="label">LinkedIn</span>
+                  <span class="detail">satyamenses</span>
+                </a>
+                <a href="https://www.researchgate.net/profile/Satyam-Gupta-49?ev=hdr_xprf" target="_blank" class="social-pill">
+                  <img src="https://cdn.simpleicons.org/researchgate" alt="ResearchGate" class="icon-img">
+                  <span class="label">ResearchGate</span>
+                  <span class="detail">Satyam Gupta</span>
+                </a>
+                <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=ACrTK9VBT-D3ZbV_ru31AOpTKRYjF3TBn94jObDyPa5Wfpg8MGBTAARKvHN2vt_BJvnTHnROVEmMCeUZ0L9WocyTzoOWnVDf8eRduSeKA-c&user=L_ehFgkAAAAJ" target="_blank" class="social-pill">
+                  <img src="https://cdn.simpleicons.org/googlescholar" alt="Google Scholar" class="icon-img">
+                  <span class="label">Google Scholar</span>
+                  <span class="detail">Satyam Gupta</span>
+                </a>
+                <a href="https://x.com/Satmaysatyam" target="_blank" class="social-pill">
+                  <img src="https://cdn.simpleicons.org/x" alt="X" class="icon-img">
+                  <span class="label">X (Twitter)</span>
+                  <span class="detail">@Satmaysatyam</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="contact-card">
-            <h3>Message prompt</h3>
-            <p>
-              Use this section for a short email-style invitation, a contact form, or an embedded Google Form.
-              If you want the site to stay fully editable inside Google Sites, this block can be replaced with a simple form embed later.
-            </p>
-            <div class="divider"></div>
-            <p><b>Suggested CTA:</b> “Reach out if you would like to discuss ecology, bioacoustics, mentoring, or field collaboration.”</p>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form-card">
+              <form action="https://formsubmit.co/satmaysatyam@gmail.com" method="POST">
+                <!-- Redirect back to contact page after sending -->
+                <input type="hidden" name="_next" value="https://satmaysatyam.github.io/Personal-Website_01/contact.html">
+                <!-- Disable Captcha for smoother UX -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Jane Goodall" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label style="margin-bottom: 0.5rem;">Message</label>
+                  <textarea name="message" class="form-control" placeholder="I'd love to chat about..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                  <span>Send Message</span>
+                  <span>✨</span>
+                </button>
+              </form>
+            </div>
+
           </div>
         </div>
+
       </section>
     </main>
 
