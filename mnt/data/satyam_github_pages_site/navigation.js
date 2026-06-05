@@ -46,22 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     footer.innerHTML = `
-      <div>Designed as a modular multi-page website with modern CSS view transitions.</div>
       ${licenseHtml}
     `;
     app.appendChild(footer);
   }
 
-  // 4. Create Floating Note (if not already defined)
-  if (!document.querySelector('.floating-note')) {
-    const note = document.createElement('div');
-    note.className = 'floating-note';
-    note.innerHTML = `
-      <strong>Multi-page Site</strong><br>
-      Styles live in <code>style.css</code>. Menu links and shared layout are loaded dynamically from <code>navigation.js</code>.
-    `;
-    app.appendChild(note);
-  }
+
 
   // 5. Aesthetic Page Exit Transitions (Cross-Browser support)
   document.addEventListener('click', (e) => {

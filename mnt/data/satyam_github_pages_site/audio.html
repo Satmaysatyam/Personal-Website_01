@@ -134,6 +134,9 @@
           if (card.playing) {
             stopSound(card);
           } else {
+            audioState.forEach(s => {
+              if (s.id !== card.id && s.playing) stopSound(s);
+            });
             card.playing = true;
             if (card.audioEl) {
               card.audioEl.volume = card.volume;

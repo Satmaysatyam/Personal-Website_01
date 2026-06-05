@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = L.map('field-map', {
       center: [21.5, 78.5],
       zoom: 4,
-      zoomControl: false,
+      zoomControl: true,
       scrollWheelZoom: false
     });
 
@@ -155,23 +155,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map);
 
     // Custom marker icon design based on studied Taxa
-    const getCustomIcon = (emoji) => L.divIcon({
-      className: 'custom-map-pin',
-      html: `<div style="
-        width: 26px; 
-        height: 26px; 
-        background: rgba(255, 255, 255, 0.95); 
-        border: 2px solid #0b5d43; 
-        border-radius: 50%; 
-        box-shadow: 0 4px 10px rgba(13,33,25,0.2);
-        display: grid;
-        place-items: center;
-        font-size: 15px;
-        animation: pulse-pin 1.5s infinite alternate;
-      ">${emoji}</div>`,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13]
-    });
+    const getCustomIcon = (emoji) => {
+      // If the string contains more than one emoji (which usually means length > 2 in JS due to surrogates)
+      const isMulti = emoji.length > 2;
+      const width = isMulti ? 46 : 26;
+      const anchor = isMulti ? 23 : 13;
+      
+      return L.divIcon({
+        className: 'custom-map-pin',
+        html: `<div style="
+          width: ${width}px; 
+          height: 26px; 
+          background: rgba(255, 255, 255, 0.95); 
+          border: 2px solid #0b5d43; 
+          border-radius: 13px; 
+          box-shadow: 0 4px 10px rgba(13,33,25,0.2);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+          font-size: 13px;
+          animation: pulse-pin 1.5s infinite alternate;
+        ">${emoji}</div>`,
+        iconSize: [width, 26],
+        iconAnchor: [anchor, 13]
+      });
+    };
 
     // CSS Keyframe injected dynamically for marker animation
     const styleSheet = document.createElement('style');
@@ -189,14 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         coords: [27.070, 92.400],
         title: "Eaglenest Wildlife Sanctuary",
-        emoji: "🪲",
-        desc: "Arthropod Ecology: Conducting elevational sampling of arthropod communities to document species distribution patterns and altitudinal gradients."
-      },
-      {
-        coords: [27.150, 92.400],
-        title: "Eaglenest Wildlife Sanctuary",
-        emoji: "🐦",
-        desc: "Avian Bioacoustics: Studying mixed-species bird flocks (MSFs) to model social networks and vocal centrality during the dawn chorus (Symphony of Survival)."
+        emoji: "🐦🪲",
+        desc: "<strong>Avian Bioacoustics:</strong> Studying mixed-species bird flocks (MSFs) to model social networks and vocal centrality during the dawn chorus.<br><br><strong>Arthropod Ecology:</strong> Conducting elevational sampling of arthropod communities to document species distribution patterns and altitudinal gradients."
       },
       {
         coords: [22.464, 78.182],
@@ -219,8 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         coords: [22.250, 80.600],
         title: "Kanha Tiger Reserve",
-        emoji: "📷",
-        desc: "Wildlife Tourism: Researching tourist visitation footprints, visitor-wildlife interactions, and park management dynamics."
+        emoji: "📷🐦",
+        desc: "<strong>Wildlife Tourism:</strong> Researching tourist visitation footprints, visitor-wildlife interactions, and park management dynamics.<br><br><strong>Avian Ecology:</strong> Participated in the annual bird count with the Wildlife and Nature Conservancy (WNC) Indore."
       },
       {
         coords: [22.484, 81.761],
