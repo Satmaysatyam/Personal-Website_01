@@ -196,6 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Research sites data matching Satyam's CV
     const sites = [
       {
+        coords: [51.355, 10.840],
+        title: "Affenwald Park, Germany",
+        emoji: "🐒",
+        desc: "<strong>Primate Ecology:</strong> Investigating the fundamental drivers and mechanisms of collective movement and multimodal communication in ring-tailed lemurs using multi-sensor collars."
+      },
+      {
         coords: [27.070, 92.400],
         title: "Eaglenest Wildlife Sanctuary",
         emoji: "🐦🪲",
@@ -264,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Add markers to the map
+    const bounds = [];
     sites.forEach(site => {
       const popupContent = `
         <div>
@@ -278,7 +285,13 @@ document.addEventListener('DOMContentLoaded', () => {
           minWidth: 200,
           maxWidth: 240
         });
+      bounds.push(site.coords);
     });
+    
+    // Fit map to show all markers initially
+    if (bounds.length > 0) {
+      map.fitBounds(bounds, { padding: [40, 40] });
+    }
   }
 
   // ==========================================================================

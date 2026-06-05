@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audiomoth for Absolute Beginners | Giving Back | Satyam Gupta</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid rgba(22, 49, 38, 0.08);
+      border-radius: var(--radius2);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(13,33,25,0.04);
+    }
+    
+    .article-header {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(22, 49, 38, 0.08);
+    }
+    
+    .article-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    
+    .article-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .article-content h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 30px 0 15px;
+      border-bottom: 2px solid var(--brand);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    
+    .article-content h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 20px 0 10px;
+    }
+    
+    .article-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    
+    .article-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    
+    .article-content li {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    
+    .article-note {
+      background: rgba(217, 164, 65, 0.1);
+      border-left: 4px solid #d9a441;
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #7a5405;
+    }
+    
+    .article-note strong {
+      font-weight: 800;
+      color: #5c3f04;
+    }
+
+    .red-flag {
+      background: rgba(220, 53, 69, 0.05);
+      border: 1px solid rgba(220, 53, 69, 0.2);
+      padding: 30px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    
+    .red-flag h4 {
+      color: #dc3545;
+      margin-top: 0;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    
+    .red-flag ul {
+      margin-bottom: 0;
+    }
+    
+    .red-flag li {
+      color: #a82734;
+      font-size: 1rem;
+    }
+    
+    .red-flag strong {
+      color: #8c1e28;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+    
+    .back-link:hover {
+      transform: translateX(-4px);
+    }
+    
+    .interactive-icon {
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: default;
+    }
+    
+    .article-content h4:hover .interactive-icon,
+    .article-content h3:hover .interactive-icon,
+    .red-flag h4:hover .interactive-icon {
+      transform: scale(1.3) rotate(8deg);
+    }
+    
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 24px;
+      }
+      .article-title {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @keyframes led-flash-green {
+      0%, 100% { opacity: 0.1; box-shadow: none; }
+      50% { opacity: 1; box-shadow: 0 0 8px 2px #28a745; }
+    }
+    
+    @keyframes led-flash-red {
+      0%, 100% { opacity: 0.1; box-shadow: none; }
+      50% { opacity: 1; box-shadow: 0 0 8px 2px #dc3545; }
+    }
+    
+    .led {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+      background-color: #333;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+    
+    .led.green-flash {
+      background-color: #28a745;
+      animation: led-flash-green 1s infinite;
+    }
+    
+    .led.red-flash {
+      background-color: #dc3545;
+      animation: led-flash-red 1s infinite;
+    }
+    
+    .led.red-solid {
+      background-color: #dc3545;
+      box-shadow: 0 0 8px 2px #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Header dynamically injected by navigation.js -->
+
+    <main class="section-wrap">
+      <section class="page" style="padding-top: 40px;">
+        <a href="giving.html" class="back-link">← Back to Giving Back</a>
+        
+        <article class="article-container">
+          <header class="article-header">
+            <h1 class="article-title">Audiomoth for Absolute Beginners</h1>
+            <div class="article-meta">
+              <span>Field Equipment Guide</span>
+            </div>
+          </header>
+          
+          <div class="article-content">
+            <figure style="margin: 0 0 20px 0;">
+              <img src="Photography/real_audiomoth_board.jpg" style="width:100%; border-radius:12px; object-fit:cover; height: 350px;" alt="Close-up of an AudioMoth SD card slot and board">
+              <figcaption style="font-size: 0.85rem; color: var(--muted); margin-top: 6px; text-align: right;">Image Credit: rhine3 / GitHub</figcaption>
+            </figure>
+            
+            <div class="article-note">
+              Before configuring your devices, always ensure the fundamentals are covered. A failure here can cost you weeks of data.
+            </div>
+
+            <h3><span class="interactive-icon">✅</span>Pre-Deployment Checklist</h3>
+            <ul>
+              <li><strong>Format your storage:</strong> Always format the microSD cards before a new deployment. Use FAT32 (MS-DOS) for cards 32GB or smaller, and exFAT for cards larger than 32GB. Insert the card upside down (label side down, metallic contacts up) until it clicks securely.</li>
+              <li><strong>Power up:</strong> Insert three AA batteries. Lithium AA batteries provide a larger capacity than standard alkaline and perform better. Because the batteries are connected in series, their combined capacity is only equal to the capacity of a single battery.</li>
+              <li><strong>Secure the power:</strong> Wrap a piece of painter's tape around the batteries to prevent them from jostling loose during transit. If the batteries briefly disconnect, the device will instantly lose its internal clock setting.</li>
+              <li><strong>Wipe the slate clean:</strong> <em>Always</em> reprogram the AudioMoth from scratch before every single deployment to ensure the internal clock and schedule are perfectly synced.</li>
+            </ul>
+
+            <h3><span class="interactive-icon">⚙️</span>Configuration Steps</h3>
+            <ol style="font-size: 1.05rem; line-height: 1.7; color: var(--muted); margin-bottom: 20px; padding-left: 20px;">
+              <li style="margin-bottom: 8px;"><strong>Connect to PC:</strong> Turn the white AudioMoth switch to the <strong>USB/OFF</strong> position and plug it into your laptop using a micro-USB cable.</li>
+              <li style="margin-bottom: 8px;"><strong>Update Firmware:</strong> Open the <strong>AudioMoth Flash App</strong> to check your current firmware version. Click "Flash AudioMoth" to update to the latest version if needed.</li>
+              <li style="margin-bottom: 8px;"><strong>Set the Time Zone:</strong> Open the <strong>AudioMoth Configuration App</strong>. Under the "File" menu, select <strong>Local Time</strong>. While UTC is an option, using Local Time is highly recommended to minimize the chances of miscalculating your daily recording schedules.</li>
+              <li style="margin-bottom: 8px;"><strong>Set the Sample Rate:</strong> Your sample rate must be at least twice the highest frequency you intend to record (the Nyquist rate). A sample rate of 32 kHz or 48 kHz is generally sufficient for recording birds and frogs. However, for bat sampling, a much higher rate is required: it is recommended to use <strong>384 kHz</strong>, which allows for a maximum recording frequency of 192 kHz.</li>
+              <li style="margin-bottom: 8px;"><strong>Adjust the Gain:</strong> Gain settings do not affect the frequency response, they only change the overall recorded level. For general bird and frog monitoring, set the Gain to <strong>High</strong>.</li>
+              <li style="margin-bottom: 8px;"><strong>Navigate Recording Schedule Limits:</strong> Define your start and stop times in the Schedule tab by clicking "Add recording period". Note that the app strictly allows a maximum of only 5 unique recording schedules.</li>
+              <li style="margin-bottom: 8px;"><strong>The Cyclic Recording Workaround:</strong> Because of the 5-schedule limit, you must use a makeshift approach for complex intervals. For example, to record for 5 minutes every hour continuously throughout the day, you cannot create 24 unique schedules. Instead, create <em>one</em> continuous 24-hour recording period and use the sleep timer: configure the device to record for 300 seconds (5 minutes) and sleep for 3300 seconds (55 minutes).</li>
+              <li style="margin-bottom: 8px;"><strong>Apply Filters:</strong> If monitoring birds and amphibians, apply a <strong>Band-pass filter</strong> from <strong>0 to 18 kHz</strong> to cut out unnecessary ultra-high-frequency noise. Leave this open if sampling bats.</li>
+              <li style="margin-bottom: 8px;"><strong>Optimize Data Management:</strong> In the Configuration App, ensure you check the option to separate files into daily folders. Additionally, configure the file naming convention so that the maximum amount of useful information (specifically the exact date and time) is included in the file name itself. This step is crucial for your analytical workflow; when you later process the files in R or Raven Pro, having the temporal data embedded directly in the file names allows for seamless, automated data extraction.</li>
+              <li style="margin-bottom: 8px;"><strong>Review Usage Estimates:</strong> Check the bottom of the Configuration tab. The app automatically calculates your daily megabyte storage usage and an estimated battery lifespan based on your settings.</li>
+              <li style="margin-bottom: 8px;"><strong>Save Settings:</strong> Click the green <strong>Configure AudioMoth</strong> button. This writes the schedule directly to the device and automatically syncs the internal clock to your computer's time.</li>
+              <li style="margin-bottom: 8px;"><strong>Disconnect:</strong> Unplug the AudioMoth from the computer, keeping the switch securely in the <strong>USB/OFF</strong> position until you deploy.</li>
+            </ol>
+
+            <h3><span class="interactive-icon">🌲</span>Field Deployment</h3>
+            <figure style="margin: 0 0 20px 0;">
+              <img src="https://www.global.bioweb.co/cdn/shop/files/Untitled_HDR-4-sq-s_2000x.webp?v=1719502074" style="width:100%; border-radius:12px; object-fit:cover; height: 300px;" alt="AudioMoth deployed in a weatherproof case on a tree">
+              <figcaption style="font-size: 0.85rem; color: var(--muted); margin-top: 6px; text-align: right;">Image Credit: Global Bioweb</figcaption>
+            </figure>
+            <ol style="font-size: 1.05rem; line-height: 1.7; color: var(--muted); margin-bottom: 20px; padding-left: 20px;" start="13">
+              <li style="margin-bottom: 8px;"><strong>Activate:</strong> Once at your field site, move the white switch from <strong>USB/OFF</strong> to <strong>CUSTOM</strong>.</li>
+              <li style="margin-bottom: 8px;"><strong>Read the LED Indicators:</strong> It is crucial to verify the diagnostic LED lights before walking away:
+                <ul style="margin-top: 8px;">
+                  <li><span class="led green-flash"></span><strong>Flashing Green:</strong> The device is armed, functioning properly, and waiting outside of its scheduled recording period.</li>
+                  <li><span class="led red-flash"></span><strong>Flashing Red:</strong> The device is actively triggered and currently making a recording.</li>
+                  <li><span class="led green-flash"></span><span class="led red-flash"></span><strong>Flashing Both Green and Red:</strong> There is an error (usually an unset clock or missing schedule). You must reconnect it to a computer to reprogram it.</li>
+                  <li><span class="led red-solid"></span><strong>Constant Solid Red:</strong> Your SD card is completely full, or the device lost its time setting due to a battery disconnect.</li>
+                </ul>
+              </li>
+              <li style="margin-bottom: 8px;"><strong>Mount in Case:</strong> Place the AudioMoth into its weatherproof case. Ensure the microphone icon on the board is placed entirely flush against the plastic acoustic vent/membrane, which keeps dirt and moisture out. Ensure nothing obscures the microphone when strapping the case to a tree.</li>
+            </ol>
+
+            <div class="red-flag">
+              <h4><span class="interactive-icon">⚠️</span>Crucial Precautions & Best Practices</h4>
+              <ul>
+                <li><strong>Impact Check:</strong> If the AudioMoth is accidentally struck, dropped, or bumped during or after deployment, immediately check the LED indicators. A physical shock can momentarily disconnect the batteries. Verify it is still flashing green/red and hasn't entered an error state.</li>
+                <li><strong>Routine Data Audits:</strong> Do not simply deploy your devices and walk away for a month. Due to various unpredictable field conditions, you should check the recorded files periodically—a good practice is at least twice a week—to catch any possible recording errors early.</li>
+                <li><strong>The Golden Rule of Batteries:</strong> Any time you remove the batteries for charging or replacement, the device loses its internal time. You must <em>always</em> re-sync the time using the AudioMoth app before deploying it again.</li>
+                <li><strong>The Safety Pin Hack:</strong> Always keep a standard metal safety pin (the kind used for draping clothes) in your field kit or taped inside your deployment bag. If an AudioMoth glitches out, freezes, or refuses to respond in the field, a safety pin is the perfect makeshift tool to carefully short the reset contacts on the board or trigger a manual hard reset when troubleshooting.</li>
+                <li><strong>Carry a Field Backup Kit:</strong> Always carry extra micro-USB cables, spare batteries (preferably rechargeable ones), and extra SD cards. <em>Pro Tip:</em> Digitally rename your SD cards (e.g., "AM_01", "AM_02") on your computer before formatting. This prevents catastrophic data mix-ups when you are swapping cards across multiple AudioMoths at the same time.</li>
+                <li><strong>Master Configurations for Large Projects:</strong> If you are running a long-term project across a large spatial scale with multiple AudioMoths, do not manually type the settings for every single device. Instead, set up your perfect configuration once, go to the "File" menu in the upper left, and save it as a <code>.txt</code> file. For all subsequent devices, simply sync the time, load this saved <code>.txt</code> file, and hit configure. This guarantees identical, error-free settings across your entire study.</li>
+              </ul>
+            </div>
+            
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer dynamically injected by navigation.js -->
+  </div>
+
+  <script src="data.js"></script>
+  <script src="navigation.js"></script>
+</body>
+</html>

@@ -475,32 +475,21 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 /* --- Lemur Collective Movement Animation --- */
 .lemur-troop {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  overflow: hidden;
-}
-
-.lemur {
-  position: absolute;
-  bottom: 8%;
-  left: -15%;
-}
-
-.lemur-sprite {
-  font-size: 2.6rem;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-}
-
-/* The lemurs sit together and groove to a beat */
-.lemur-troop {
-  position: absolute;
-  top: 30px;
-  right: 50px;
+  bottom: -40px;
+  left: -300px;
   display: flex;
   align-items: flex-end;
   gap: 15px;
   z-index: 10;
+  pointer-events: none;
+  animation: lemur-traverse 25s linear infinite;
+}
+
+@keyframes lemur-traverse {
+  0% { transform: translateX(0); }
+  35% { transform: translateX(calc(40vw)); }
+  55% { transform: translateX(calc(40vw)); }
+  100% { transform: translateX(calc(100vw + 600px)); }
 }
 
 .lemur {
@@ -510,9 +499,18 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
   justify-content: center;
 }
 
-/* Animate the bouncing groove */
+.follower {
+  animation: follower-catch-up 25s infinite ease-in-out;
+}
+
+@keyframes follower-catch-up {
+  0%, 46% { transform: translateX(-200px); }
+  51%, 100% { transform: translateX(0); }
+}
+
 .lemur-sprite {
-  animation: groove-bounce 0.6s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+  animation: groove-bounce 0.4s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
   transform-origin: bottom center;
 }
 
@@ -533,14 +531,31 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
   font-size: 1.8rem;
   opacity: 0;
   transform: scale(0.5);
-  animation: pop-bubble 16s infinite;
+  animation: pop-bubble 25s infinite;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
 @keyframes pop-bubble {
-  0%, 26% { opacity: 0; transform: scale(0.5); }
-  28%, 43% { opacity: 1; transform: scale(1.1); }
-  45%, 100% { opacity: 0; transform: scale(0.5); }
+  0%, 36% { opacity: 0; transform: scale(0.5); }
+  38%, 46% { opacity: 1; transform: scale(1.1); }
+  48%, 100% { opacity: 0; transform: scale(0.5); }
+}
+
+.gaze-bubble {
+  position: absolute;
+  top: -24px;
+  left: -10px;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: gaze-pop 25s infinite;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+@keyframes gaze-pop {
+  0%, 41% { opacity: 0; transform: scale(0.5); }
+  43%, 51% { opacity: 1; transform: scale(1.1); }
+  53%, 100% { opacity: 0; transform: scale(0.5); }
 }
 
 /* --- Ambient Bioacoustics Waveform --- */

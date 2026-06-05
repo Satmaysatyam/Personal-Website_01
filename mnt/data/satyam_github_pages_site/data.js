@@ -11,26 +11,22 @@ const site = {
   ],
   researchTabs: [
     {
-      id: 'flock',
-      title: 'MSF Flock Ecology',
-      emoji: '🐦',
-      intro: 'Symphony of Survival: Bioacoustics & Prey Dynamics in the Eastern Himalayas',
-      desc: 'My Master\'s thesis research investigated vocal species centrality in mixed-species bird flocks (MSFs) in Eaglenest Wildlife Sanctuary, Arunachal Pradesh, India. This study combined bioacoustic network modeling of the dawn chorus with field sampling of insect/arthropod prey availability to examine how acoustic beacons and resource density influence group cohesion and foraging dynamics.',
+      id: 'lemur',
+      title: 'Lemur Collective Movement',
+      emoji: '🐒',
+      intro: 'Multimodal Communication & Social Dynamics in the Coordination of Collective Movement',
+      desc: 'Collective movement is a defining feature of group living and an ideal behavioural lens for investigating how individual decisions scale to coordinated group action. When groups travel together, they reduce predation risk, pool information about resources, and maintain cohesion; however, they must also resolve conflicts of interest regarding when to leave, where to go, and who to follow.',
       points: [
-        'Conducted bioacoustic recordings of mixed-species understory bird flocks during the dawn chorus in the Eastern Himalayas.',
-        'Modeled social network centrality to demonstrate how highly vocal species act as acoustic beacons to maintain flock cohesion.',
-        'Estimated insect/arthropod prey availability across an elevational gradient to analyze how understory bird prey biomass affects flock movement and species composition.',
-        'Conducted extensive understory arthropod sampling using foliage-sweeping and trunk-bark search methods.'
+        'Investigating how multimodal cues (acoustic and visual) and social relationships interact to shape the initiation and coordination of collective movement in ring-tailed lemurs (<i>Lemur catta</i>).',
+        'Deploying multi-sensor collars to synchronously record GPS, inertial movement (IMU), proximity, and on-animal acoustics across all members of a group.',
+        'Establishing a continuous, group-level view of communication, social context, and movement dynamics to study collective coordination at Affenwald Park, Germany.'
       ],
       images: [
-        { src: 'Research/MSF1.JPG', caption: 'Vocal Centrality Network Plot representing social structure' },
-        { src: 'Research/MSF2.JPG', caption: 'Conducting bioacoustic recordings in Eaglenest Wildlife Sanctuary' },
-        { src: 'Research/MSF3.JPG', caption: 'Fieldwork in the Eastern Himalayas' },
-        { src: 'Research/MSF4.JPG', caption: 'Mixed-Species Flock Observations' }
+        { src: 'Research/lemur_multimodal_diagram.jpg', caption: 'Diagram demonstrating the role of visual and acoustic cues in coordinating collective movement' }
       ],
       logos: [
-        { name: 'Pondicherry University', abbr: 'PU', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/pondiuni.edu.in' },
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' }
+        { name: 'Deutsches Primatenzentrum', abbr: 'DPZ', color: '#1a5c78', bg: '#f0f5f8', logoUrl: 'https://www.google.com/s2/favicons?domain=dpz.eu&sz=128' },
+        { name: 'Deutscher Akademischer Austauschdienst', abbr: 'DAAD', color: '#005b82', bg: '#f0f5f8', logoUrl: 'https://www.google.com/s2/favicons?domain=daad.de&sz=128' }
       ]
     },
     {
@@ -55,8 +51,31 @@ const site = {
         { src: 'Research/Amphibian8.jpeg', caption: 'Recording acoustic data in natural amphibian habitats' }
       ],
       logos: [
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' },
-        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea', logoUrl: 'logos/atbc.png' }
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://upload.wikimedia.org/wikipedia/en/4/46/IISc_logo%282%29.svg' },
+        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea', logoUrl: 'https://www.google.com/s2/favicons?domain=tropicalbiology.org&sz=128' }
+      ]
+    },
+    {
+      id: 'flock',
+      title: 'MSF Flock Ecology',
+      emoji: '🐦',
+      intro: 'Symphony of Survival: Bioacoustics & Prey Dynamics in the Eastern Himalayas',
+      desc: 'My Master\'s thesis research investigated vocal species centrality in mixed-species bird flocks (MSFs) in Eaglenest Wildlife Sanctuary, Arunachal Pradesh, India. This study combined bioacoustic network modeling of the dawn chorus with field sampling of insect/arthropod prey availability to examine how acoustic beacons and resource density influence group cohesion and foraging dynamics.',
+      points: [
+        'Conducted bioacoustic recordings of mixed-species understory bird flocks during the dawn chorus in the Eastern Himalayas.',
+        'Modeled social network centrality to demonstrate how highly vocal species act as acoustic beacons to maintain flock cohesion.',
+        'Estimated insect/arthropod prey availability across an elevational gradient to analyze how understory bird prey biomass affects flock movement and species composition.',
+        'Conducted extensive understory arthropod sampling using foliage-sweeping and trunk-bark search methods.'
+      ],
+      images: [
+        { src: 'Research/MSF1.JPG', caption: 'Vocal Centrality Network Plot representing social structure' },
+        { src: 'Research/MSF2.JPG', caption: 'Conducting bioacoustic recordings in Eaglenest Wildlife Sanctuary' },
+        { src: 'Research/MSF3.JPG', caption: 'Fieldwork in the Eastern Himalayas' },
+        { src: 'Research/MSF4.JPG', caption: 'Mixed-Species Flock Observations' }
+      ],
+      logos: [
+        { name: 'Pondicherry University', abbr: 'PU', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://www.google.com/s2/favicons?domain=pondiuni.edu.in&sz=128' },
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://upload.wikimedia.org/wikipedia/en/4/46/IISc_logo%282%29.svg' }
       ]
     },
     {
@@ -96,11 +115,11 @@ const site = {
         }
       ],
       logos: [
-        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/wii.gov.in' },
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://logo.clearbit.com/iisc.ac.in' },
-        { name: 'Chhattisgarh Forest Department', abbr: 'CG-FD', color: '#163126', bg: '#f4f8f6' },
-        { name: 'Haryana Forest Department', abbr: 'HR-FD', color: '#163126', bg: '#f4f8f6' },
-        { name: 'WALMI Bhopal', abbr: 'WALMI', color: '#174f7b', bg: '#f0f5fa' }
+        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Logo_of_the_Wildlife_Institute_of_India.svg' },
+        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'https://upload.wikimedia.org/wikipedia/en/4/46/IISc_logo%282%29.svg' },
+        { name: 'Chhattisgarh Forest Department', abbr: 'CG-FD', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://www.google.com/s2/favicons?domain=cgforest.com&sz=128' },
+        { name: 'Haryana Forest Department', abbr: 'HR-FD', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://www.google.com/s2/favicons?domain=haryanaforest.gov.in&sz=128' },
+        { name: 'WALMI Bhopal', abbr: 'WALMI', color: '#174f7b', bg: '#f0f5fa', logoUrl: 'https://www.google.com/s2/favicons?domain=walmibhopal.mp.gov.in&sz=128' }
       ]
     },
     {
@@ -157,10 +176,10 @@ const site = {
         }
       ],
       logos: [
-        { name: 'World Wide Fund for Nature India', abbr: 'WWF', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://logo.clearbit.com/wwfindia.org' },
-        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/wrcsindia.org' },
-        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://logo.clearbit.com/cwsindia.org' },
-        { name: 'Madhya Pradesh Forest Department', abbr: 'MP-FD', color: '#163126', bg: '#f4f8f6' }
+        { name: 'World Wide Fund for Nature India', abbr: 'WWF', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://upload.wikimedia.org/wikipedia/en/2/24/WWF_logo.svg' },
+        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea', logoUrl: 'https://www.google.com/s2/favicons?domain=wrcsindia.org&sz=128' },
+        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'https://www.google.com/s2/favicons?domain=cwsindia.org&sz=128' },
+        { name: 'Madhya Pradesh Forest Department', abbr: 'MP-FD', color: '#163126', bg: '#f4f8f6', logoUrl: 'https://www.google.com/s2/favicons?domain=mpforest.gov.in&sz=128' }
       ]
     }
   ],
@@ -734,42 +753,18 @@ const site = {
       emoji: '🦌'
     },
 
+
     // --- Invertebrates ---
     {
-      id: 'indian_earth_tiger',
-      title: 'Indian Earth Tiger',
-      scientific: 'Chilobrachys species',
+      id: 'amboli_purple_crab',
+      title: 'Amboli Purple Forest Crab',
+      scientific: 'Ghatiana atropurpurea',
       group: 'Invertebrates',
-      srcs: ['Photography/_DSC0131.JPG', 'Photography/_DSC0138.JPG'],
-      captions: [
-        'An Indian Earth Tiger tarantula (Chilobrachys species) photographed on tree bark during arthropod elevational surveys in the Eastern Himalayas.',
-        'Close-up showing the characteristic stout legs and thick hairy body adapted for burrowing and bark dwelling.'
-      ],
-      emoji: '🕷️'
-    },
-
-    // --- Habitats & Fieldwork ---
-    {
-      id: 'dsc_scenic',
-      title: 'Evergreen Forest Canopy',
-      scientific: 'Western Ghats Wet Zone',
-      group: 'Habitats & Fieldwork',
       srcs: ['Photography/_DSC0328.png'],
       captions: [
-        'A view of the complex, multi-layered canopy structures where bioacoustic monitoring is conducted.'
+        'An Amboli purple forest crab (Ghatiana atropurpurea) observed in the Western Ghats.'
       ],
-      emoji: '🌿'
-    },
-    {
-      id: 'fieldwork_satyam',
-      title: 'Field Research and Acoustic Monitoring',
-      scientific: 'Eastern Himalayas / Western Ghats',
-      group: 'Habitats & Fieldwork',
-      srcs: ['personal photos/_DSC0620.JPG'],
-      captions: [
-        'Conducting bioacoustic monitoring and documentation of species diversity in their natural environments.'
-      ],
-      emoji: '🎙️'
+      emoji: '🦀'
     }
   ],
   art: [
@@ -829,7 +824,7 @@ const site = {
       amount: '₹4,00,000',
       year: '2019 - 2024',
       note: 'Prestigious national scholarship awarded for pursuing higher education in basic and natural sciences.',
-      logo: 'https://online-inspire.gov.in/images/dst-logo.jpg'
+      logo: 'https://www.google.com/s2/favicons?domain=online-inspire.gov.in&sz=128'
     }
   ]
 };
