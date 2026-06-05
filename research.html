@@ -590,8 +590,8 @@
       gap: 16px;
     }
     .grant-logo {
-      width: 56px;
-      height: 56px;
+      width: 72px;
+      height: 72px;
       border-radius: 12px;
       object-fit: contain;
       background: white;
@@ -819,15 +819,15 @@
             ${tab.logos.map(logo => {
               if (logo.logoUrl) {
                 return `
-                  <div class="inst-badge" title="${logo.name}" style="background: white; padding: 4px 6px; border: 1px solid rgba(0,0,0,0.06); border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); display: flex; align-items: center;">
-                    <img src="${logo.logoUrl}" alt="${logo.abbr}" style="height: 24px; width: auto; max-width: 70px; object-fit: contain;">
+                  <div class="inst-badge" title="${logo.name}" style="background: white; padding: 6px 8px; border: 1px solid rgba(0,0,0,0.06); border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); display: flex; align-items: center;">
+                    <img src="${logo.logoUrl}" alt="${logo.abbr}" style="height: 36px; width: auto; max-width: 100px; object-fit: contain;">
                     <span style="display:none;">${logo.name}</span>
                   </div>
                 `;
               }
               return `
                 <div class="inst-badge" title="${logo.name}">
-                  <div style="width: 24px; height: 24px; border-radius: 50%; background: ${logo.color}; color: white; display: grid; place-items: center; font-size: 0.65rem; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">${logo.abbr}</div>
+                  <div style="width: 36px; height: 36px; border-radius: 50%; background: ${logo.color}; color: white; display: grid; place-items: center; font-size: 0.8rem; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">${logo.abbr}</div>
                   <span style="display:none;">${logo.name}</span>
                 </div>
               `;
