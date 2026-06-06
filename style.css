@@ -50,7 +50,7 @@ button, input, textarea, select { font: inherit; }
   border-bottom: 1px solid rgba(22,49,38,0.08);
 }
 .topbar-inner {
-  max-width: 100%; padding: 14px 3%;
+  max-width: 100%; padding: 14px 16px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .brand {
