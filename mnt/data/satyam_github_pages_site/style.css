@@ -524,13 +524,24 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 
 @keyframes follower-catch-up {
   0% { transform: translateX(0); }
-  5%, 25% { transform: translateX(-150px); }
-  30%, 35% { transform: translateX(0); }
-  40%, 49% { transform: translateX(-150px); }
-  54%, 59% { transform: translateX(0); }
-  64%, 72% { transform: translateX(-150px); }
-  77%, 82% { transform: translateX(0); }
-  87%, 100% { transform: translateX(-150px); }
+  
+  /* Path 1: Drift back slowly */
+  24% { transform: translateX(-150px); }
+  /* Catch up before Corner 1 */
+  29%, 34% { transform: translateX(0); }
+  
+  /* Path 2: Drift back slowly */
+  46% { transform: translateX(-150px); }
+  /* Catch up before Corner 2 */
+  51%, 56% { transform: translateX(0); }
+  
+  /* Path 3: Drift back slowly */
+  70% { transform: translateX(-150px); }
+  /* Catch up before Corner 3 */
+  75%, 80% { transform: translateX(0); }
+  
+  /* Path 4: Drift back slowly */
+  95%, 100% { transform: translateX(-150px); }
 }
 
 .lemur-sprite {
