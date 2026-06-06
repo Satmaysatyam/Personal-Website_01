@@ -27,7 +27,7 @@ const site = {
       ],
       logos: [
         { name: 'Deutsches Primatenzentrum', abbr: 'DPZ', color: '#1a5c78', bg: '#f0f5f8', logoUrl: 'logos/dpz.png' },
-        { name: 'Deutscher Akademischer Austauschdienst', abbr: 'DAAD', color: '#005b82', bg: '#f0f5f8', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/DAAD_Logo.svg' }
+        { name: 'Deutscher Akademischer Austauschdienst', abbr: 'DAAD', color: '#005b82', bg: '#f0f5f8', logoUrl: 'logos/daad.png' }
       ]
     },
     {
@@ -182,8 +182,8 @@ const site = {
       ],
       logos: [
         { name: 'Wildlife and Nature Conservancy', abbr: 'WNC', color: '#174f7b', bg: '#f0f5fa', logoUrl: 'logos/wnc.png' },
-        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea' },
-        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea' },
+        { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea', logoUrl: 'logos/wrcs.png' },
+        { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'logos/cws.png' },
         { name: 'Madhya Pradesh Forest Department', abbr: 'MP-FD', color: '#163126', bg: '#f4f8f6' }
       ]
     }
@@ -797,7 +797,7 @@ const site = {
       amount: '€1,400 / month',
       year: '2026-29',
       note: 'Highly prestigious research grant awarded for pursuing doctoral research in Germany, supporting international academic exchange and scientific cooperation.',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/DAAD_Logo.svg'
+      logo: 'logos/daad.png'
     },
     {
       title: 'ASAB Conference Attendance Grant',
@@ -829,7 +829,7 @@ const site = {
       amount: '₹4,00,000',
       year: '2019 - 2024',
       note: 'Five-year national scholarship awarded for pursuing basic sciences.',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg'
+      logo: 'logos/dst.png'
     }
   ]
 };
