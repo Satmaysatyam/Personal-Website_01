@@ -123,7 +123,7 @@ const site = {
         { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'logos/iisc.svg' },
         { name: 'Chhattisgarh Forest Department', abbr: 'CG-FD', color: '#163126', bg: '#f4f8f6' },
         { name: 'Haryana Forest Department', abbr: 'HR-FD', color: '#163126', bg: '#f4f8f6' },
-        { name: 'WALMI Bhopal', abbr: 'WALMI', color: '#174f7b', bg: '#f0f5fa' }
+        { name: 'WALMI Bhopal', abbr: 'WALMI', color: '#174f7b', bg: '#f0f5fa', logoUrl: 'logos/walmi.png' }
       ]
     },
     {
