@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV | Satyam Gupta</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .cv-section { margin-bottom: 24px; }
+    .cv-section-title { font-size: 1.3rem; margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(22,49,38,0.1); color: var(--ink); }
+    .cv-item { margin-bottom: 18px; }
+    .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 10px; }
+    .cv-item-title { font-weight: 700; color: var(--ink); }
+    .cv-item-date { font-size: 0.85rem; color: var(--muted); white-space: nowrap; font-weight: 600; }
+    .cv-item-subtitle { font-size: 0.95rem; color: var(--brand); margin-bottom: 6px; font-weight: 500; }
+    .cv-item-desc { font-size: 0.95rem; line-height: 1.6; color: rgba(22,49,38,0.85); margin: 0; }
+    .cv-item-desc ul { margin: 6px 0 0; padding-left: 20px; }
+    .cv-item-desc li { margin-bottom: 4px; }
+    
+    .pub-card { border: 1px solid rgba(22,49,38,0.1); padding: 16px; border-radius: 12px; margin-bottom: 12px; background: rgba(255,255,255,0.5); }
+    .pub-title { font-weight: 700; margin-bottom: 4px; }
+    .pub-authors { font-size: 0.9rem; color: var(--muted); margin-bottom: 6px; }
+    .pub-journal { font-size: 0.85rem; font-style: italic; color: var(--brand); }
+    
+    .skills-category { margin-bottom: 14px; }
+    .skills-category strong { display: block; margin-bottom: 6px; font-size: 0.95rem; }
+    
+    @media (max-width: 780px) {
+      .cv-item-header { flex-direction: column; align-items: flex-start; gap: 2px; }
+    }
+  </style>
 </head>
 <body>
   <div class="app">
@@ -14,34 +38,248 @@
       <section id="page-cv" class="page">
         <div class="section-title">
           <div>
-            <h2>CV</h2>
-            <p>The formal CV stays polished. The Anti-CV adds honesty, texture, and mentorship value by showing the unseen side of research life.</p>
+            <h2>Curriculum Vitae</h2>
+            <p>A comprehensive overview of my academic background, research experience, and the realities behind the science.</p>
           </div>
-          <span class="badge">Formal + reflective</span>
+          <span class="badge">Formal + Reflective</span>
         </div>
-        <div class="split">
-          <div class="card pad">
-            <h3>Formal CV snapshot</h3>
-            <p>
-              MSc in Ecology from Pondicherry University, BSc in Zoology from St. Xavier’s College, and a research record spanning bird flocks, camera trapping, dugong work, GIS training, and multiple conferences.
+
+        <div class="tabs" id="cvTabs">
+          <button class="tab active" data-target="formal-cv">Formal CV</button>
+          <button class="tab" data-target="anti-cv">Anti-CV</button>
+          <a href="Satyam_Gupta_CV.pdf" download class="btn primary" style="margin-left: auto; text-decoration: none; padding: 10px 20px; font-size: 0.95rem; border-radius: 999px;">
+            Download PDF
+          </a>
+        </div>
+
+        <!-- FORMAL CV TAB -->
+        <div id="formal-cv" class="tab-panel" style="display: block;">
+          <div class="grid-2">
+            <!-- Left Column -->
+            <div>
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Education</h3>
+                
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Doctor of Philosophy in Biology</span>
+                    <span class="cv-item-date">Aug. 2024 – Current</span>
+                  </div>
+                  <div class="cv-item-subtitle">Ashoka University, Sonipat</div>
+                  <p class="cv-item-desc">CGPA: 3.77/4</p>
+                </div>
+                
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Master of Science in Ecology</span>
+                    <span class="cv-item-date">Dec. 2022 – May 2024</span>
+                  </div>
+                  <div class="cv-item-subtitle">Pondicherry University, Puducherry</div>
+                  <p class="cv-item-desc">CGPA: 9.58/10</p>
+                </div>
+                
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Bachelor of Science in Zoology</span>
+                    <span class="cv-item-date">July 2019 – June 2022</span>
+                  </div>
+                  <div class="cv-item-subtitle">St. Xavier’s College (Autonomous), Ahmedabad</div>
+                  <p class="cv-item-desc">CGPA: 8.16/10</p>
+                </div>
+              </div>
+
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Research Experience</h3>
+                
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Master’s Thesis Project</span>
+                    <span class="cv-item-date">Jan. 2024 - May 2024</span>
+                  </div>
+                  <div class="cv-item-subtitle">Eastern Himalayas, Arunachal Pradesh</div>
+                  <div class="cv-item-desc">
+                    <strong>Title:</strong> Symphony of survival: A bioacoustic approach to studying mixed-species bird flocks.<br/>
+                    <strong>Advisors:</strong> Dr. K Sivakumar & Dr. Umesh Srinivasan.
+                    <ul>
+                      <li>Studied mixed species bird flock dynamics using bioacoustics.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Summer Intern</span>
+                    <span class="cv-item-date">Apr. 2022 - July 2022</span>
+                  </div>
+                  <div class="cv-item-subtitle">Eaglenest Wildlife Sanctuary, Arunachal Pradesh</div>
+                  <div class="cv-item-desc">
+                    <ul>
+                      <li>Estimated arthropod prey availability for insectivorous birds across an elevational gradient.</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Field Assistant</span>
+                    <span class="cv-item-date">Jan. 2021 - Feb. 2021</span>
+                  </div>
+                  <div class="cv-item-subtitle">CAMPA DUGONG Conservation Project, Marine National Park</div>
+                  <div class="cv-item-desc">
+                    <ul>
+                      <li>Assisted WII research team at Gulf of Kutch in conducting field surveys, awareness programs, and sorting seagrass associated macrobenthic fauna.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Ecological Volunteer Work</span>
+                    <span class="cv-item-date">2020 - 2022</span>
+                  </div>
+                  <div class="cv-item-desc">
+                    <ul>
+                      <li><strong>Kanha Bird Survey (2022):</strong> Annual bird count in Kanha Tiger Reserve.</li>
+                      <li><strong>Camera Trapping (2021):</strong> Satpura-Pench Corridor Occupancy survey with WWF India.</li>
+                      <li><strong>Occupancy Surveys (2020-21):</strong> Melghat and Satpura Tiger Reserves.</li>
+                      <li><strong>Wildlife Tourism (2021):</strong> Examined nature viewing preferences at Kanha TR.</li>
+                      <li><strong>Vulture Census (2021):</strong> Anuppur, Madhya Pradesh Forest Department.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Teaching Experience</h3>
+                <div class="cv-item">
+                  <div class="cv-item-header">
+                    <span class="cv-item-title">Graduate Assistant</span>
+                    <span class="cv-item-date">Jan. 2025 – May 2025</span>
+                  </div>
+                  <div class="cv-item-subtitle">Ashoka University, Sonipat</div>
+                  <div class="cv-item-desc">
+                    <ul>
+                      <li><strong>Life in the Neighbourhood (UG):</strong> Taught bioacoustics, birding, and behavioural experiments.</li>
+                      <li><strong>Ecological Methods (Grad):</strong> Taught applications of bioacoustics, occupancy modelling, and camera trapping.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Skills</h3>
+                
+                <div class="skills-category">
+                  <strong>Field Skills</strong>
+                  <div class="chip-row">
+                    <span class="chip">Bioacoustics</span>
+                    <span class="chip">Camera Trapping</span>
+                    <span class="chip">Mist Netting & Ringing</span>
+                    <span class="chip">VIE Tagging</span>
+                    <span class="chip">Sign Survey</span>
+                  </div>
+                </div>
+                
+                <div class="skills-category">
+                  <strong>Technical & Analytical</strong>
+                  <div class="chip-row">
+                    <span class="chip">Network Analysis</span>
+                    <span class="chip">Spatial Analysis</span>
+                    <span class="chip">Image/Video Processing</span>
+                  </div>
+                </div>
+                
+                <div class="skills-category">
+                  <strong>Software</strong>
+                  <div class="chip-row">
+                    <span class="chip">R</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">ArcGIS & QGIS</span>
+                    <span class="chip">Raven Pro & Audacity</span>
+                    <span class="chip">BORIS</span>
+                    <span class="chip">LaTeX</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Publications</h3>
+                
+                <div class="pub-card">
+                  <div class="pub-title">Vocal species are more central in Eastern Himalayan Mixed-Species Bird Flocks</div>
+                  <div class="pub-authors">S. Gupta, A. Bharadwaj, et al.</div>
+                  <div class="pub-journal">BioRxiv, Under Revision, Ornithology (2024)</div>
+                </div>
+                
+                <div class="pub-card">
+                  <div class="pub-title">From Genes to Ecosystems: A Multidisciplinary Approach for the Short-Tailed Sea Snake in India</div>
+                  <div class="pub-authors">P. Hatkar, S. Gupta, R. Chinnasamy</div>
+                  <div class="pub-journal">Journal of Marine Sciences (2025)</div>
+                </div>
+              </div>
+
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Awards & Grants</h3>
+                <ul style="padding-left: 20px; line-height: 1.6; margin: 0; color: rgba(22,49,38,0.85);">
+                  <li><strong>ASAB Travel Grant (£500)</strong> - Winter Conference, Scotland (2025)</li>
+                  <li><strong>IEC Travel Grant</strong> - Koita Centre for Digital Health (2025)</li>
+                  <li><strong>ATBC Seed Research Grant</strong> - Breeding ecology of frogs in Western Ghats (2025)</li>
+                  <li><strong>GATE Ecology & Evolution (AIR 74)</strong> (2024)</li>
+                  <li><strong>DST INSPIRE Scholarship</strong> (2019 - 2024)</li>
+                  <li><strong>Bronze Medallist</strong> - State-level Kudo Championship (2017)</li>
+                </ul>
+              </div>
+              
+              <div class="card pad cv-section">
+                <h3 class="cv-section-title">Select Conferences</h3>
+                <ul style="padding-left: 20px; line-height: 1.6; margin: 0; color: rgba(22,49,38,0.85);">
+                  <li><strong>ASAB Winter Conference (2025)</strong>: Talk on Mosquito Acoustic Eavesdropping.</li>
+                  <li><strong>IEC on Behaviour (2025)</strong>: Oral presentation on Vocal Species Centrality.</li>
+                  <li><strong>Indian Wildlife Ecology Conf. (2024)</strong>: Presented Master's thesis work.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ANTI-CV TAB -->
+        <div id="anti-cv" class="tab-panel" style="display: none;">
+          <div class="card pad cv-section">
+            <h3 class="cv-section-title">The Unseen Realities (Anti-CV)</h3>
+            <p style="color: var(--muted); line-height: 1.6; margin-bottom: 24px;">
+              The formal CV stays polished. The Anti-CV adds honesty, texture, and mentorship value by showing the unseen side of research life. It makes the profile human and useful for students who are looking for the right lab culture, not just the right project title.
             </p>
-            <div class="divider"></div>
-            <div class="timeline">
-              <div class="timeline-item"><div class="timeline-year">2024</div><div><b>Master’s thesis</b><br/><span class="subtle">Symphony of survival: bioacoustic study of mixed-species bird flocks in the Eastern Himalayas.</span></div></div>
-              <div class="timeline-item"><div class="timeline-year">2024</div><div><b>GATE</b><br/><span class="subtle">Qualified Ecology and Evolution paper, AIR 74.</span></div></div>
-              <div class="timeline-item"><div class="timeline-year">2025</div><div><b>Conference presentation</b><br/><span class="subtle">Oral presentation on vocal species centrality in bird flocks.</span></div></div>
-            </div>
-          </div>
-          <div class="card pad">
-            <h3>Anti-CV</h3>
-            <div class="article">
-              <div class="q"><b>Rejected work</b><br/><span class="subtle">Hypotheses that failed, scripts that broke, and analyses that had to be rebuilt from scratch.</span></div>
-              <div class="q"><b>Field realities</b><br/><span class="subtle">Rain, cold, exhausted batteries, broken gear, and the occasional silent morning in the forest.</span></div>
-              <div class="q"><b>Mentorship lesson</b><br/><span class="subtle">Good science needs good boundaries: authorship, data ownership, field hours, and human dignity should be discussed early.</span></div>
-              <div class="q"><b>Why keep this page</b><br/><span class="subtle">It makes the profile human and useful for students who are looking for the right lab culture, not just the right project title.</span></div>
+            
+            <div class="grid-2">
+              <div class="article" style="background: rgba(11,93,67,0.03); padding: 20px; border-radius: 16px;">
+                <div class="q">
+                  <b>Rejected Grants & Papers</b><br/>
+                  <span class="subtle">For every accepted grant like the ATBC Seed Grant, there are several proposals that were rejected, requiring complete rethinking and rewriting. Rejection is the silent majority of academic life.</span>
+                </div>
+                <div class="q">
+                  <b>Failed Experiments</b><br/>
+                  <span class="subtle">Hypotheses that failed, scripts in R and Python that broke unexpectedly during critical analysis, and data pipelines that had to be rebuilt from scratch after months of work.</span>
+                </div>
+              </div>
+              
+              <div class="article" style="background: rgba(11,93,67,0.03); padding: 20px; border-radius: 16px;">
+                <div class="q">
+                  <b>Field Realities</b><br/>
+                  <span class="subtle">The polished photos hide the torrential rain, freezing cold, exhausted batteries, broken gear, leeches, and the occasional silent, frustrating mornings in the forest where no data was collected.</span>
+                </div>
+                <div class="q">
+                  <b>Mentorship Lessons</b><br/>
+                  <span class="subtle">Good science needs good boundaries: authorship, data ownership, field hours, and human dignity should be discussed early. Learning this often came through difficult experiences.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </section>
     </main>
 
@@ -50,5 +288,29 @@
 
   <script src="data.js"></script>
   <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // If it's a link (like the Download button), ignore
+          if (tab.tagName.toLowerCase() === 'a') return;
+
+          // Remove active from all tabs & panels
+          tabs.forEach(t => t.classList.remove('active'));
+          panels.forEach(p => p.style.display = 'none');
+
+          // Activate clicked tab
+          tab.classList.add('active');
+          const target = tab.getAttribute('data-target');
+          if (target) {
+            document.getElementById(target).style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
