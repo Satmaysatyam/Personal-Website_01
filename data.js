@@ -790,7 +790,7 @@ const site = {
       title: 'DAAD Doctoral Scholarship',
       agency: 'Deutscher Akademischer Austauschdienst (DAAD)',
       amount: '€1,400 / month',
-      year: '2025',
+      year: '2026-29',
       note: 'Highly prestigious research grant awarded for pursuing doctoral research in Germany, supporting international academic exchange and scientific cooperation.',
       logo: 'https://www.google.com/s2/favicons?domain=daad.de&sz=128'
     },
