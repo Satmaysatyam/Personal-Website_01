@@ -54,7 +54,7 @@ const site = {
       ],
       logos: [
         { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'logos/iisc.svg' },
-        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea' }
+        { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea', logoUrl: 'logos/atbc.png' }
       ]
     },
     {
@@ -181,6 +181,7 @@ const site = {
         }
       ],
       logos: [
+        { name: 'Wildlife and Nature Conservancy', abbr: 'WNC', color: '#174f7b', bg: '#f0f5fa', logoUrl: 'logos/wnc.png' },
         { name: 'Wildlife Research & Conservation Society', abbr: 'WRCS', color: '#8d5d3b', bg: '#f6f2ea' },
         { name: 'Centre for Wildlife Studies', abbr: 'CWS', color: '#0b5d43', bg: '#f6f2ea' },
         { name: 'Madhya Pradesh Forest Department', abbr: 'MP-FD', color: '#163126', bg: '#f4f8f6' }
