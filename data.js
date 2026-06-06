@@ -53,7 +53,7 @@ const site = {
         { src: 'Research/Amphibian8.jpeg', caption: 'Recording acoustic data in natural amphibian habitats' }
       ],
       logos: [
-        { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'logos/iisc.png' },
+        { name: 'Ashoka University', abbr: 'Ashoka', color: '#b91c21', bg: '#fdf2f2', logoUrl: 'logos/ashoka.png' },
         { name: 'Association for Tropical Biology & Conservation', abbr: 'ATBC', color: '#d9a441', bg: '#f6f2ea', logoUrl: 'logos/atbc.png' }
       ]
     },
