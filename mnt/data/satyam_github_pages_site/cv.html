@@ -10,6 +10,9 @@
     .cv-section-title { font-size: 1.3rem; margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(22,49,38,0.1); color: var(--ink); }
     .cv-item { margin-bottom: 18px; }
     .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 10px; }
+    .cv-item-title-wrap { display: flex; align-items: center; gap: 8px; }
+    .cv-logo { width: 20px; height: 20px; border-radius: 4px; object-fit: contain; flex-shrink: 0; background: white; }
+    .cv-emoji { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
     .cv-item-title { font-weight: 700; color: var(--ink); }
     .cv-item-date { font-size: 0.85rem; color: var(--muted); white-space: nowrap; font-weight: 600; }
     .cv-item-subtitle { font-size: 0.95rem; color: var(--brand); margin-bottom: 6px; font-weight: 500; }
@@ -26,7 +29,7 @@
     .skills-category strong { display: block; margin-bottom: 6px; font-size: 0.95rem; }
     
     @media (max-width: 780px) {
-      .cv-item-header { flex-direction: column; align-items: flex-start; gap: 2px; }
+      .cv-item-header { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
   </style>
 </head>
@@ -62,7 +65,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Doctor of Philosophy in Biology</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=dpz.eu&sz=64" alt="DPZ" class="cv-logo">
+                      <span class="cv-item-title">Doctor of Philosophy in Biology</span>
+                    </div>
                     <span class="cv-item-date">Starting Oct. 2026</span>
                   </div>
                   <div class="cv-item-subtitle">German Primate Center (DPZ) & Georg-August-Universität Göttingen</div>
@@ -75,7 +81,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Doctor of Philosophy in Biology</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=ashoka.edu.in&sz=64" alt="Ashoka" class="cv-logo">
+                      <span class="cv-item-title">Doctor of Philosophy in Biology</span>
+                    </div>
                     <span class="cv-item-date">Aug. 2024 – June 2026</span>
                   </div>
                   <div class="cv-item-subtitle">Ashoka University, Sonipat</div>
@@ -87,7 +96,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Master of Science in Ecology</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=pondiuni.edu.in&sz=64" alt="Pondicherry Univ" class="cv-logo">
+                      <span class="cv-item-title">Master of Science in Ecology</span>
+                    </div>
                     <span class="cv-item-date">Dec. 2022 – May 2024</span>
                   </div>
                   <div class="cv-item-subtitle">Pondicherry University, Puducherry</div>
@@ -96,7 +108,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Bachelor of Science in Zoology</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=sxca.edu.in&sz=64" alt="St Xavier's" class="cv-logo">
+                      <span class="cv-item-title">Bachelor of Science in Zoology</span>
+                    </div>
                     <span class="cv-item-date">July 2019 – June 2022</span>
                   </div>
                   <div class="cv-item-subtitle">St. Xavier’s College (Autonomous), Ahmedabad</div>
@@ -109,7 +124,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Master’s Thesis Project</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=iisc.ac.in&sz=64" alt="IISc" class="cv-logo">
+                      <span class="cv-item-title">Master’s Thesis Project</span>
+                    </div>
                     <span class="cv-item-date">Jan. 2024 - May 2024</span>
                   </div>
                   <div class="cv-item-subtitle">Eastern Himalayas, Arunachal Pradesh</div>
@@ -124,7 +142,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Summer Intern</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=iisc.ac.in&sz=64" alt="IISc" class="cv-logo">
+                      <span class="cv-item-title">Summer Intern</span>
+                    </div>
                     <span class="cv-item-date">Apr. 2022 - July 2022</span>
                   </div>
                   <div class="cv-item-subtitle">Eaglenest Wildlife Sanctuary, Arunachal Pradesh</div>
@@ -137,7 +158,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Field Assistant</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=wii.gov.in&sz=64" alt="WII" class="cv-logo">
+                      <span class="cv-item-title">Field Assistant</span>
+                    </div>
                     <span class="cv-item-date">Jan. 2021 - Feb. 2021</span>
                   </div>
                   <div class="cv-item-subtitle">CAMPA DUGONG Conservation Project, Marine National Park</div>
@@ -150,7 +174,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Kanha Bird Survey</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🦅</span>
+                      <span class="cv-item-title">Volunteer - Kanha Bird Survey</span>
+                    </div>
                     <span class="cv-item-date">Feb. 2022</span>
                   </div>
                   <div class="cv-item-subtitle">Kanha Tiger Reserve, Madhya Pradesh</div>
@@ -163,7 +190,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Camera Trapping</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=wwfindia.org&sz=64" alt="WWF" class="cv-logo">
+                      <span class="cv-item-title">Volunteer - Camera Trapping</span>
+                    </div>
                     <span class="cv-item-date">July 2021 - Aug. 2021</span>
                   </div>
                   <div class="cv-item-subtitle">Satpura-Pench Corridor, Madhya Pradesh</div>
@@ -176,7 +206,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Occupancy Survey</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=wrcsindia.org&sz=64" alt="WRCS" class="cv-logo">
+                      <span class="cv-item-title">Volunteer - Occupancy Survey</span>
+                    </div>
                     <span class="cv-item-date">June 2021</span>
                   </div>
                   <div class="cv-item-subtitle">Melghat Tiger Reserve, Maharashtra</div>
@@ -189,7 +222,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Intern - GIS and Remote Sensing</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🗺️</span>
+                      <span class="cv-item-title">Intern - GIS and Remote Sensing</span>
+                    </div>
                     <span class="cv-item-date">May 2021</span>
                   </div>
                   <div class="cv-item-subtitle">WALMI, Madhya Pradesh</div>
@@ -202,7 +238,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Wildlife Tourism</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🏕️</span>
+                      <span class="cv-item-title">Volunteer - Wildlife Tourism</span>
+                    </div>
                     <span class="cv-item-date">March 2021</span>
                   </div>
                   <div class="cv-item-subtitle">Kanha Tiger Reserve, Madhya Pradesh</div>
@@ -215,7 +254,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Vulture Census</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🦅</span>
+                      <span class="cv-item-title">Volunteer - Vulture Census</span>
+                    </div>
                     <span class="cv-item-date">March 2021</span>
                   </div>
                   <div class="cv-item-subtitle">Anuppur, Madhya Pradesh</div>
@@ -228,7 +270,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Intern - People’s Biodiversity Register</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=tdu.edu.in&sz=64" alt="FRLHT" class="cv-logo">
+                      <span class="cv-item-title">Intern - People’s Biodiversity Register</span>
+                    </div>
                     <span class="cv-item-date">Jan. 2021</span>
                   </div>
                   <div class="cv-item-subtitle">Achanakmar Tiger Reserve, Chhattisgarh</div>
@@ -241,7 +286,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Volunteer - Occupancy Survey</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=wrcsindia.org&sz=64" alt="WRCS" class="cv-logo">
+                      <span class="cv-item-title">Volunteer - Occupancy Survey</span>
+                    </div>
                     <span class="cv-item-date">Oct. 2020</span>
                   </div>
                   <div class="cv-item-subtitle">Satpura Tiger Reserve, Madhya Pradesh</div>
@@ -254,7 +302,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Intern - People’s Biodiversity Register</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=tdu.edu.in&sz=64" alt="FRLHT" class="cv-logo">
+                      <span class="cv-item-title">Intern - People’s Biodiversity Register</span>
+                    </div>
                     <span class="cv-item-date">March 2020 - Sept. 2020</span>
                   </div>
                   <div class="cv-item-subtitle">Haryana, India</div>
@@ -270,7 +321,10 @@
                 <h3 class="cv-section-title">Teaching Experience</h3>
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Graduate Assistant</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=ashoka.edu.in&sz=64" alt="Ashoka" class="cv-logo">
+                      <span class="cv-item-title">Graduate Assistant</span>
+                    </div>
                     <span class="cv-item-date">Jan. 2025 – May 2025</span>
                   </div>
                   <div class="cv-item-subtitle">Ashoka University, Sonipat</div>
@@ -358,7 +412,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">ASAB Winter Conference 2025</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=asab.org&sz=64" alt="ASAB" class="cv-logo">
+                      <span class="cv-item-title">ASAB Winter Conference 2025</span>
+                    </div>
                     <span class="cv-item-date">Dec. 2025</span>
                   </div>
                   <div class="cv-item-subtitle">Edinburgh, UK</div>
@@ -369,7 +426,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">International Ethological Congress on Behaviour 2025</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🌍</span>
+                      <span class="cv-item-title">International Ethological Congress on Behaviour 2025</span>
+                    </div>
                     <span class="cv-item-date">Aug. 2025</span>
                   </div>
                   <div class="cv-item-subtitle">Kolkata, India</div>
@@ -380,7 +440,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Indian Wildlife Ecology Conference</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🐅</span>
+                      <span class="cv-item-title">Indian Wildlife Ecology Conference</span>
+                    </div>
                     <span class="cv-item-date">June 2024</span>
                   </div>
                   <div class="cv-item-subtitle">NCBS Bangalore, India</div>
@@ -391,7 +454,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Student Conference on Conservation Science (SCCS)</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=sccs-bng.org&sz=64" alt="SCCS" class="cv-logo">
+                      <span class="cv-item-title">Student Conference on Conservation Science (SCCS)</span>
+                    </div>
                     <span class="cv-item-date">Oct. 2024</span>
                   </div>
                   <div class="cv-item-desc">
@@ -401,7 +467,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">National Conference on Education for Sustainable Development</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🎓</span>
+                      <span class="cv-item-title">National Conference on Education for Sustainable Development</span>
+                    </div>
                     <span class="cv-item-date">Dec. 2022</span>
                   </div>
                   <div class="cv-item-subtitle">Pune, Maharashtra</div>
@@ -412,7 +481,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">SCIENCE MANTHAN</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🔬</span>
+                      <span class="cv-item-title">SCIENCE MANTHAN</span>
+                    </div>
                     <span class="cv-item-date">Feb. 2020</span>
                   </div>
                   <div class="cv-item-subtitle">Gujarat, India</div>
@@ -427,7 +499,10 @@
                 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Bat Taxonomy, Acoustics and Biogeography</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🦇</span>
+                      <span class="cv-item-title">Bat Taxonomy, Acoustics and Biogeography</span>
+                    </div>
                     <span class="cv-item-date">April 2024</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Kerala Forest Research Institute, Thrissur, Kerala.</li></ul></div>
@@ -435,7 +510,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">RS and GIS Applications on Biodiversity Conservation</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=amu.ac.in&sz=64" alt="AMU" class="cv-logo">
+                      <span class="cv-item-title">RS and GIS Applications on Biodiversity Conservation</span>
+                    </div>
                     <span class="cv-item-date">Oct. 2021</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Aligarh Muslim University, Aligarh.</li></ul></div>
@@ -443,7 +521,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Basis of Conservation</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🌿</span>
+                      <span class="cv-item-title">Basis of Conservation</span>
+                    </div>
                     <span class="cv-item-date">Aug. 2020</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Green Works Trust, Mumbai.</li></ul></div>
@@ -451,7 +532,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Basis of Rescue and Rehabilitation of Freshwater Macrofauna</span>
+                    <div class="cv-item-title-wrap">
+                      <img src="https://www.google.com/s2/favicons?domain=wii.gov.in&sz=64" alt="WII" class="cv-logo">
+                      <span class="cv-item-title">Basis of Rescue and Rehabilitation of Freshwater Macrofauna</span>
+                    </div>
                     <span class="cv-item-date">June 2020</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Wildlife Institute of India, Dehradun.</li></ul></div>
@@ -459,7 +543,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Basis of Organic Farming</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🌱</span>
+                      <span class="cv-item-title">Basis of Organic Farming</span>
+                    </div>
                     <span class="cv-item-date">June 2020</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Department of Botany and IQAC, Devrukh.</li></ul></div>
@@ -467,7 +554,10 @@
 
                 <div class="cv-item">
                   <div class="cv-item-header">
-                    <span class="cv-item-title">Understanding Snakes</span>
+                    <div class="cv-item-title-wrap">
+                      <span class="cv-emoji">🐍</span>
+                      <span class="cv-item-title">Understanding Snakes</span>
+                    </div>
                     <span class="cv-item-date">May 2020</span>
                   </div>
                   <div class="cv-item-desc"><ul><li>Nidus and Foundation For Biodiversity Conservation.</li></ul></div>
