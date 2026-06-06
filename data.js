@@ -119,7 +119,7 @@ const site = {
         }
       ],
       logos: [
-        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'logos/wii.svg' },
+        { name: 'Wildlife Institute of India', abbr: 'WII', color: '#0b5d43', bg: '#f6f2ea', logoUrl: 'logos/wii.png' },
         { name: 'Indian Institute of Science', abbr: 'IISc', color: '#143559', bg: '#eef3ed', logoUrl: 'logos/iisc.svg' },
         { name: 'Chhattisgarh Forest Department', abbr: 'CG-FD', color: '#163126', bg: '#f4f8f6' },
         { name: 'Haryana Forest Department', abbr: 'HR-FD', color: '#163126', bg: '#f4f8f6' },
