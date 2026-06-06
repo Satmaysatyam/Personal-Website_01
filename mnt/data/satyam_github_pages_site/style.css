@@ -498,14 +498,14 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
   /* 4. Climb down the gap */
   55% { transform: translate(calc(60% - 145px), 530px) rotate(90deg) scaleX(1); }
   
-  /* 5. Quick pivot to face left at the bottom */
-  58% { transform: translate(calc(60% - 145px), 550px) rotate(0deg) scaleX(-1); }
+  /* 5. Quick pivot to face right at the bottom */
+  58% { transform: translate(calc(60% - 145px), 550px) rotate(0deg) scaleX(1); }
   
-  /* 6. Walk left along the bottom of the green box */
-  88% { transform: translate(-300px, 550px) rotate(0deg) scaleX(-1); }
+  /* 6. Walk right along the bottom of the photo */
+  88% { transform: translate(calc(100vw + 300px), 550px) rotate(0deg) scaleX(1); }
   
-  /* 7. Reset seamlessly */
-  100% { transform: translate(-300px, 550px) rotate(0deg) scaleX(-1); }
+  /* 7. Stay off-screen to reset */
+  100% { transform: translate(calc(100vw + 300px), 550px) rotate(0deg) scaleX(1); }
 }
 
 .lemur {
