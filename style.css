@@ -356,10 +356,13 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 @media (max-width: 1080px) {
   .hero, .split, .contact-grid, .grid-2, .grid-3, .grid-4, .gallery-grid, .art-grid, .sound-grid, .mixer-grid { grid-template-columns: 1fr 1fr; }
   .hero { grid-template-columns: 1fr; }
+  .lemur-troop { display: none; }
 }
 @media (max-width: 780px) {
   .topbar-inner { flex-direction: column; align-items: stretch; }
-  .nav { justify-content: flex-start; overflow-x: auto; padding-bottom: 4px; }
+  .brand > div { white-space: normal; }
+  .nav { justify-content: flex-start; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
   .hero { padding-top: 18px; }
   .hero-panel { min-height: auto; padding: 24px; }
   .hero h1 { font-size: clamp(2.4rem, 12vw, 4rem); }
