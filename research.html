@@ -385,38 +385,15 @@
     }
     
     .pub-visual {
-      position: relative;
-      overflow: hidden;
-      background: #f0ebe1;
+      display: flex;
+      flex-direction: column;
       height: 100%;
-      min-height: 280px;
+      border-left: 1px solid rgba(0,0,0,0.04);
+      background: #fafaf9;
     }
     
-    .pub-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .pub-card:hover .pub-visual img {
-      transform: scale(1.04);
-    }
-    
-    .pub-caption {
-      position: absolute;
-      bottom: 0;
-      inset-inline: 0;
-      background: linear-gradient(180deg, transparent, rgba(8,18,14,0.85));
-      color: white;
-      padding: 18px 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-    
-    .pub-caption span {
-      font-style: italic;
-      opacity: 0.95;
+    .pub-card:hover .fig-img-wrap img.main-img {
+      transform: scale(1.03);
     }
     
     /* --- Citation Modal --- */
@@ -1019,9 +996,12 @@
               </div>
             </div>
             <div class="pub-visual">
-              <img src="${p.img}" alt="${p.title}" loading="lazy">
-              <div class="pub-caption">
-                <span>${p.id === 'bird_flocks' ? '📊' : '📸'} ${p.speciesName}</span>
+              <div class="fig-img-wrap" style="flex-shrink: 0; border-radius: 0;">
+                <img src="${p.img}" class="bg-blur" alt="" aria-hidden="true">
+                <img src="${p.img}" class="main-img" alt="${p.title}" loading="lazy">
+              </div>
+              <div class="fig-caption" style="border-top: none; background: transparent; display: block; height: auto;">
+                <span style="font-weight: 700; color: var(--ink);">${p.id === 'bird_flocks' ? '📊' : '📸'} ${p.speciesName}</span>
                 ${p.imgCredit ? `<br><span class="pub-credit" style="font-size: 0.72rem; opacity: 0.8; font-weight: normal; margin-top: 4px; display: inline-block;">Photo: ${p.imgCredit}</span>` : ''}
               </div>
             </div>
