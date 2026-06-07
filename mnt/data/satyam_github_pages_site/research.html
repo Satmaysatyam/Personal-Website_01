@@ -61,17 +61,27 @@
       background: #f0ebe1;
     }
     
-    .fig-img-wrap img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .research-fig-card:hover .fig-img-wrap img {
+    .fig-img-wrap img.bg-blur {
+        position: absolute;
+        top: -10%; left: -10%;
+        width: 120%; height: 120%;
+        object-fit: cover;
+        filter: blur(20px) opacity(0.5);
+        z-index: 0;
+      }
+      
+      .fig-img-wrap img.main-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 1;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .research-fig-card:hover .fig-img-wrap img.main-img {
       transform: scale(1.04);
     }
     
@@ -91,13 +101,18 @@
     }
     
     .fig-caption {
-      padding: 14px 16px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.5;
-      border-top: 1px solid rgba(22, 49, 38, 0.04);
-      background: rgba(255,255,255,0.5);
-    }
+        padding: 14px 18px;
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.5;
+        border-top: 1px solid rgba(0,0,0,0.04);
+        background: #fafaf9;
+        height: 70px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
     
     /* --- Lightbox Modal --- */
     .lightbox {
@@ -776,10 +791,11 @@
                   ${group.images.map((img, idx) => `
                     <div class="carousel-item ${idx === 0 ? 'active' : ''}" data-idx="${idx}">
                       <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
-                        <div class="fig-img-wrap">
-                          <img src="${img.src}" alt="${img.caption}" loading="lazy">
-                          <span class="fig-badge">Figure ${idx + 1} of ${group.images.length}</span>
-                        </div>
+                          <div class="fig-img-wrap">
+                            <img src="${img.src}" class="bg-blur" alt="" aria-hidden="true">
+                            <img src="${img.src}" class="main-img" alt="${img.caption}" loading="lazy">
+                            <span class="fig-badge" style="z-index:2;">Figure ${idx + 1} of ${group.images.length}</span>
+                          </div>
                         <div class="fig-caption">${img.caption}</div>
                       </div>
                     </div>
@@ -802,8 +818,9 @@
                   <div class="carousel-item ${idx === 0 ? 'active' : ''}" data-idx="${idx}">
                     <div class="research-fig-card" data-img-src="${img.src}" data-img-caption="${img.caption}">
                       <div class="fig-img-wrap">
-                        <img src="${img.src}" alt="${img.caption}" loading="lazy">
-                        <span class="fig-badge">Figure ${idx + 1} of ${tab.images.length}</span>
+                        <img src="${img.src}" class="bg-blur" alt="" aria-hidden="true">
+                        <img src="${img.src}" class="main-img" alt="${img.caption}" loading="lazy">
+                        <span class="fig-badge" style="z-index:2;">Figure ${idx + 1} of ${tab.images.length}</span>
                       </div>
                       <div class="fig-caption">${img.caption}</div>
                     </div>
